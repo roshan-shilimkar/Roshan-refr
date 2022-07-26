@@ -149,23 +149,28 @@
                                             {{x.storeName}}
                                         </div>
                                         <span class="divide"></span>
-                                        <div>
+                                        <div *ngIf="x.journey != 'F2F' || (x.journey == 'F2F' && x.refr !=null && x.by == x.refr.uid) || x.journey == 'F2F' && x.refr == null">
                                             ₹ {{x.amTotal | number:'1.0-2'}}
                                         </div>
                                     </div>
-                                    <div class="t5padding">
+                                    <div class="t5padding"
+                                        *ngIf="x.refr == null || (x.refr != null && x.by == x.refr.uid)">
                                         <span *ngIf="x.cart.length == 0">In-store purchase</span>
                                         <span *ngIf="x.cart.length > 0">Online purchase</span>
                                     </div>
                                     <div class="d_flex t5padding" *ngIf="x.journey != 'BURN'">
                                         <div *ngIf="x.refr == null">Recommedation given</div>
-                                        <div *ngIf="x.refr != null">using
+                                        <div *ngIf="x.refr != null && x.by == x.refr.uid">using
                                             <span class="primary">{{x.refr.name}}'s</span>
                                             Recommendation
                                         </div>
+                                        <div *ngIf="x.refr != null && x.by != x.refr.uid">Recommedation used by
+                                            <span class="primary">{{x.refr.name}}</span>
+                                        </div>
+
                                         <span class="divide"></span>
                                         <div *ngIf="x.earn > 0">
-                                            +
+                                            <span class="earned">Earned</span>
                                             <svg width="18" height="18" viewBox="0 0 18 18" style="margin-bottom: -4px;"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -198,16 +203,17 @@
                                                     d="M7.78466 5.18292L6.79883 6.11417L8.79341 6.11709L7.78466 5.18292Z"
                                                     fill="#FECB00" />
                                             </svg>
-                                            {{x.earn}}
+                                            <span>{{x.earn}}</span>
                                         </div>
                                     </div>
                                     <div class="t5padding" *ngIf="x.journey=='BURN'">
                                         via Burn
                                     </div>
                                     <div *ngIf="expandedindex === i">
-                                        <div class="t5padding" >
+                                        <div class="t5padding">
                                             Payment Method :
-                                            <span *ngIf="x.ordrTYPE != 'RefrCASH+ONLINE' || x.ordrTYPE != 'RefrCASH+COD'">
+                                            <span
+                                                *ngIf="x.ordrTYPE != 'RefrCASH+ONLINE' || x.ordrTYPE != 'RefrCASH+COD'">
                                                 <span *ngIf="x.ordrTYPE == 'CASH'">Cash</span>
                                                 <span *ngIf="x.ordrTYPE == 'ONLINE'">Online</span>
                                                 <span *ngIf="x.ordrTYPE == 'RefrCASH'">Refr Cash</span>
@@ -261,10 +267,10 @@
                                             {{x.sin}}
                                         </div>
                                         <span class="divide"></span>
-                                        <div class="t5padding" *ngIf="x.journey != 'BURN'">
+                                        <div class="t5padding" *ngIf="(x.journey != 'F2F' || (x.journey == 'F2F' && x.refr !=null && x.by == x.refr.uid) || x.journey == 'F2F' && x.refr == null ) && x.journey != 'BURN'">
                                             <button
                                                 (click)="expandedindex == i ? expandedindex = null : expandedindex = i"
-                                                class="expandbtn" >
+                                                class="expandbtn">
                                                 <mat-icon>
                                                     {{ expandedindex === i ? 'expand_less' : 'expand_more' }}
                                                 </mat-icon>

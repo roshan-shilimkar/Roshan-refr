@@ -348,6 +348,7 @@ export class CustomerWalletComponent implements OnInit {
       sin: { seconds: 1657693001, nanoseconds: 480000000 },
       journey: 'DIRECT',
       earn: 20,
+      by:"AsyEevcZAKPXRtc2IL3njh8ly2",
       ordrTYPE:"CASH",
       invoice: { amtRefrCash: 0, useRefrCash: false, COD: false },
       refr: null,
@@ -360,6 +361,7 @@ export class CustomerWalletComponent implements OnInit {
       sin: { seconds: 1657693001, nanoseconds: 480000000 },
       journey: 'DIRECT',
       earn: 20,
+      by:"AsyEevcZAKPXRtc2IL3njh8ly2",
       ordrTYPE: "RefrCASH+ONLINE",
       invoice: { amtRefrCash: 20, useRefrCash: true, COD: false },
       refr: null
@@ -373,6 +375,7 @@ export class CustomerWalletComponent implements OnInit {
       journey: 'F2F',
       earn: 20,
       ordrTYPE: "CASH",
+      by:"IyEevcZAKPXRtc2IL3njhvvk8ly2",
       invoice: { amtRefrCash: 0, useRefrCash: false, COD: false },
       refr: { uid: 'IyEevcZAKPXRtc2IL3njhvvk8ly2', name: 'Shrads', earn: 50 }
     },
@@ -385,6 +388,7 @@ export class CustomerWalletComponent implements OnInit {
       journey: 'F2F',
       earn: 20,
       ordrTYPE: "RefrCASH+ONLINE",
+      by:"IyEevcZAKPXRtc2IL3njhvvk8ly2",
       invoice: { amtRefrCash: 20, useRefrCash: true, COD: false },
       refr: { uid: 'IyEevcZAKPXRtc2IL3njhvvk8ly2', name: 'Shrads', earn: 50 }
     },
@@ -397,6 +401,7 @@ export class CustomerWalletComponent implements OnInit {
       journey: 'F2F',
       earn: 20,
       ordrTYPE:"ONLINE",
+      by:"AsyEevcZAKPXRtc2IL3njh8ly2",
       invoice: { amtRefrCash: 0, useRefrCash: false, COD: false },
       refr: null,
     },
@@ -409,6 +414,7 @@ export class CustomerWalletComponent implements OnInit {
       journey: 'F2F',
       earn: 20,
       ordrTYPE: "RefrCASH+ONLINE",
+      by:"AsyEevcZAKPXRtc2IL3njh8ly2",
       invoice: { amtRefrCash: 20, useRefrCash: true, COD: false },
       refr: null
     },
@@ -421,6 +427,7 @@ export class CustomerWalletComponent implements OnInit {
       journey: 'F2F',
       earn: 20,
       ordrTYPE: "CASH",
+      by:"IyEevcZAKPXRtc2IL3njhvvk8ly2",
       invoice: { amtRefrCash: 0, useRefrCash: false, COD: false },
       refr: { uid: 'IyEevcZAKPXRtc2IL3njhvvk8ly2', name: 'Shrads', earn: 50 }
     },
@@ -433,9 +440,23 @@ export class CustomerWalletComponent implements OnInit {
       journey: 'BURN',
       earn: 20,
       ordrTYPE: "RefrCASH+ONLINE",
+      by:"AsyEevcZAKPXRtc2IL3njh8ly2",
       invoice: { amtRefrCash: 20, useRefrCash: true, COD: false },
       refr: { uid: 'IyEevcZAKPXRtc2IL3njhvvk8ly2', name: 'Shrads', earn: 50 }
     },
+    {
+      storeName: "Fit Foods",
+      cart: ["sadasdasd"],
+      amCost: 980,
+      amTotal: 1000,
+      sin: { seconds: 1657693001, nanoseconds: 480000000 },
+      journey: 'F2F',
+      earn: 20,
+      ordrTYPE: "RefrCASH+ONLINE",
+      by:"AsyEevcZAKPXRtc2IL3njh8ly2",
+      invoice: { amtRefrCash: 20, useRefrCash: true, COD: false },
+      refr: { uid: 'IyEevcZAKPXRtc2IL3njhvvk8ly2', name: 'Shrads', earn: 50 }
+    }
 
   ]
   constructor() {
