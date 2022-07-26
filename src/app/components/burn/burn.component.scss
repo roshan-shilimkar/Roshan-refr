@@ -425,3 +425,22 @@ form {
     margin-left: 6px;
     // margin-bottom: 22px;
 }
+
+.category-card-container .category-card:nth-child(12n+1) {
+    box-shadow: -7px 0 #87d4fe, 0 1px #87d4fe, 0 0 10px -1px #0000001f;
+}
+.category-card-container .category-card:nth-child(12n+2) {
+    box-shadow: -7px 0 #cfa9d4, 0 1px #cfa9d4, 0 0 10px -1px #0000001f;
+}
+.category-card-container .category-card:nth-child(12n+3) {
+    box-shadow: -7px 0 #456d47, 0 1px #456d47, 0 0 10px -1px #0000001f;
+}
+.category-card-container .category-card:nth-child(12n+4) {
+    box-shadow: -7px 0 #fed79c, 0 1px #fed79c, 0 0 10px -1px #0000001f;
+}
+.category-card-container .category-card:nth-child(12n+5) {
+    box-shadow: -7px 0 #E5B681, 0 1px #E5B681, 0 0 10px -1px #0000001f;
+}
+.category-card-container .category-card:nth-child(12n+6) {
+    box-shadow: -7px 0 #456d47, 0 1px #456d47, 0 0 10px -1px #0000001f;
+}
