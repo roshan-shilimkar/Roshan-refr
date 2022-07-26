@@ -159,7 +159,7 @@
                                         <span *ngIf="x.cart.length > 0">Online purchase</span>
                                     </div>
                                     <div class="d_flex t5padding" *ngIf="x.journey != 'BURN'">
-                                        <div *ngIf="x.refr == null">Recommedation given</div>
+                                        <div *ngIf="x.refr == null">Shoutout given</div>
                                         <div *ngIf="x.refr != null && x.by == x.refr.uid">using
                                             <span class="primary">{{x.refr.name}}'s</span>
                                             Recommendation
@@ -210,16 +210,20 @@
                                         via Burn
                                     </div>
                                     <div *ngIf="expandedindex === i">
-                                        <div class="t5padding">
+                                        <div *ngIf="x.ordrTYPE == 'CASH'" class="gray_txt">
+                                            Pay directly at store.
+                                        </div>
+                                        <div class="t5padding" *ngIf="x.ordrTYPE != 'CASH'">
                                             Payment Method :
                                             <span
                                                 *ngIf="x.ordrTYPE != 'RefrCASH+ONLINE' || x.ordrTYPE != 'RefrCASH+COD'">
-                                                <span *ngIf="x.ordrTYPE == 'CASH'">Cash</span>
+                                                <!-- <span *ngIf="x.ordrTYPE == 'CASH'">Cash</span> -->
                                                 <span *ngIf="x.ordrTYPE == 'ONLINE'">Online</span>
                                                 <span *ngIf="x.ordrTYPE == 'RefrCASH'">Refr Cash</span>
                                                 <span *ngIf="x.ordrTYPE == 'COD'">COD</span>
                                             </span>
                                         </div>
+                                       
                                         <div class="gray_txt" *ngIf="x.invoice.useRefrCash == true">
                                             Refr Cash :
                                             <svg width="18" height="18" viewBox="0 0 18 18" style="margin-bottom: -4px;"

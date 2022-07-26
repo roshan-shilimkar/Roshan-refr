@@ -44,6 +44,7 @@ import { CustomerWalletComponent } from './components/customer-wallet/customer-w
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DistancecalculatorComponent } from './components/distancecalculator/distancecalculator.component';
 import { BurnComponent } from './components/burn/burn.component';
+import { FashionComponent } from './components/fashion/fashion.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { BurnComponent } from './components/burn/burn.component';
     CustomerWalletComponent,
     DistancecalculatorComponent,
     BurnComponent,
+    FashionComponent,
   ],
   imports: [
     BrowserModule,

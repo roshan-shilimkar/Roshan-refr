@@ -60,17 +60,47 @@ export class BurnComponent implements OnInit {
       img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1655457945725?alt=media&token=83ab5606-e5fa-4607-88cf-327b880f39a0",
       tit: "Personal Care"
     }
-  ]
+  ];
+
+
+  noCost:Array<any>=[{
+    burnPic:"https://firebasestorage.googleapis.com/v0/b/refr/o/store%2F8u0IjMhoyi6iTpK4ezxz1658569731786?alt=media&token=e84ac953-af46-4a4c-8753-5a2ce6face4f",
+    costBurn:90,
+    price:499,
+    burnAbout:"Mancode Beard Growth Oil, 50ml Exclusive"
+  },
+  {
+    burnPic:"https://firebasestorage.googleapis.com/v0/b/refr/o/store%2F2trd5GLcti192YcNxSsX1658563569564?alt=media&token=dd9ca261-d639-4c3b-801b-ce789de4bc50",
+    costBurn:113,
+    price:499,
+    burnAbout:"Mancode Beard Growth Oil, 50ml Exclusive"
+  },
+  {
+    burnPic:"https://firebasestorage.googleapis.com/v0/b/refr/o/store%2FN8HDxbpaRrrgnGILRk6U1658565270996?alt=media&token=71ad38e4-3a61-4cc7-b506-8306825f88d5",
+    costBurn:113,
+    price:499,
+    burnAbout:"Mancode Beard Growth Oil, 50ml Exclusive"
+  },
+  {
+    burnPic:"https://firebasestorage.googleapis.com/v0/b/refr/o/store%2FEv9lWQR21AUtAc23EwwE1658574260929?alt=media&token=53a0eea5-b76c-47e4-9ae2-70a8ecb6da63",
+    costBurn:134,
+    price:499,
+    burnAbout:"Mancode Beard Growth Oil, 50ml Exclusive"
+  }];
+
+  curated:Array<any>=[{
+    burnPic:"Mancode Beard Growth Oil, 50ml Exclusive"
+  }]
   constructor(
     // private auth: AuthService
   ) {
-    this.execute();
+    // this.execute();
   }
 
   ngOnInit(): void {
   }
 
-  execute() {
+  // execute() {
     // this.auth.user$.pipe(take(1)).subscribe(mine => {
     //   if( !mine ){
     //   }else{
@@ -82,5 +112,5 @@ export class BurnComponent implements OnInit {
     //     this.flashDeal$ = this.auth.getBurnProductListCustom(4, "flash");
     //   }
     // })
-  }
+  // }
 }
