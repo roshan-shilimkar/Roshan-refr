@@ -1,0 +1,27 @@
+<button (click)="newBlogs()" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    Create New Blogs
+</button>
+<!-- <mat-icon>search</mat-icon> -->
+<div *ngFor="let item of blogsarr" class="card">
+    <img src="{{item.imgurl}}">
+    <div class="content">
+        <div>
+            Title
+        </div>
+        <div>
+            {{item.Title}}
+        </div>
+        <div>
+            Description
+        </div>
+        <div>
+            {{item.Description}}
+        </div>
+        <div>
+            Author
+        </div>
+        <p class="para">
+            {{item.Author}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.mat-dialog-container {
+    background: white;
+}
+
+
+.mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+}
+
+.button_cont {
+    text-align: center;
+    button {
+        padding: 10px 20px;
+        background: #68afff;
+        color: white;
+        border: none;
+        border-radius: 2px;
+    }
+}
+// .mat-form-field-wrapper {
+//     padding-bottom:5px !important
+// }

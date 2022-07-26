@@ -1,0 +1,28 @@
+<div>
+    <h3>
+        Create Blog's
+    </h3>
+    <form [formGroup]="createblogs" (ngSubmit)="CreateBlog()">
+        <mat-form-field class="fields" appearance="legacy">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="Title" [autofocus]="true">
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+            <mat-label>Sub Title</mat-label>
+            <input matInput formControlName="Sub_title">
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+        <mat-form-field class="fields" appearance="legacy">
+            <mat-label>Author</mat-label>
+            <input matInput formControlName="author">
+        </mat-form-field>
+        <img src="{{imageurl}}">
+        <button mat-button color="primary" (click)="choosepic()">Select Photo</button>
+        <div class="add_contact">
+            <button mat-button type="submit">Add Blog</button>
+        </div>
+    </form>
+</div>

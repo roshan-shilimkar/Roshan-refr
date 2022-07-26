@@ -1,0 +1,328 @@
+.cards {
+    margin: 20px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  //
+  
+  .card1 {
+    background: linear-gradient(90deg, #dd5e89 0%, #f7bb97 100%);
+    border-radius: 8px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+  }
+  
+  .card1:hover {
+    box-shadow: 2px 2px 5px #dd5e89;
+  }
+  
+  // .share {
+  //   .svg1 {
+  //     box-shadow: 4px 4px 0px #dd5e89;
+  //   }
+  // }
+  
+  //
+  
+  .share {
+    svg {
+      margin-top: -1px;
+      background: transparent;
+      border: none;
+      margin-left: 20px;
+    }
+  }
+  
+  //
+  
+  .heading1 {
+    margin-left: 5px;
+    margin-top: 15px;
+  
+    p {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px !important;
+      line-height: 20px !important;
+  
+      color: #ffffff;
+    }
+  }
+  
+  .easysteps {
+    color: #ffd161 !important;
+  }
+  
+  .sse {
+    display: flex;
+    gap: 10px;
+    span {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px !important;
+      line-height: 18px !important;
+      text-transform: capitalize;
+      padding: 0 !important;
+      color: #ffffff;
+    }
+  }
+  
+  .circle {
+    margin-top: 14px;
+    margin-right: 0px;
+    border-radius: 5px;
+  }
+  
+  //
+  
+  .card2 {
+    background: linear-gradient(90deg, #085078 0%, #85d8ce 100%);
+  }
+  
+  .card2:hover {
+    box-shadow: 2px 2px 5px #085078;
+  }
+  
+  // .share {
+  //   .svg2 {
+  //     box-shadow: 4px 4px 0px #085078;
+  //   }
+  // }
+  
+  .circlecard2 {
+    margin-top: 17px;
+  }
+  
+  #refrcash {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px !important;
+    line-height: 18px !important;
+    width: 102%;
+    color: #ffffff;
+  }
+  
+  //
+  
+  .card3 {
+    background: linear-gradient(102.03deg, #874bf9 5.09%, #f9b4bf 96.31%);
+  }
+  
+  .card3:hover {
+    box-shadow: 2px 2px 5px #874bf9;
+  }
+  
+  // .share {
+  //   .svg3 {
+  //     box-shadow: 4px 4px 0px #874bf9;
+  //   }
+  // }
+  
+  //
+  
+  .card4 {
+    background: linear-gradient(102.03deg, #0091ad 5.09%, #6efafb 96.31%);
+  }
+  
+  .card4:hover {
+    box-shadow: 2px 2px 5px #0091ad;
+  }
+  
+  // .share {
+  //   .svg4 {
+  //     box-shadow: 4px 4px 0px #0091ad;
+  //   }
+  // }
+  
+  //
+  
+  .card5 {
+    background: linear-gradient(102.03deg, #3f2b96 5.09%, #a8c0ff 96.31%);
+  }
+  
+  .card5:hover {
+    box-shadow: 2px 2px 5px #3f2b96;
+  }
+  
+  // .share {
+  //   .svg5 {
+  //     box-shadow: 4px 4px 0px #3f2b96;
+  //   }
+  // }
+  
+  #grow {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px !important;
+    line-height: 24px !important;
+    color: #95db3b;
+  }
+  
+  #community {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #95db3b;
+  }
+  
+  #grow-comm {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px !important;
+    line-height: 20px !important;
+    color: #ffffff;
+    width: 100%;
+  }
+  
+  #for {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 24px !important;
+  
+    color: #ffffff;
+  }
+  
+  //
+  
+  .card6 {
+    background: linear-gradient(102.03deg, #6a82fb 5.09%, #fc5c7d 96.31%);
+  }
+  
+  .card6:hover {
+    box-shadow: 2px 2px 5px #fc5c7d;
+  }
+  
+  // .share {
+  //   .svg6 {
+  //     box-shadow: 4px 4px 0px #6a82fb;
+  //   }
+  // }
+  
+  #vocal {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px !important;
+    line-height: 20px !important;
+    color: #ff8eac;
+  }
+  
+  #local {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 20px !important;
+    color: #ff8eac;
+  }
+  
+  //
+  
+  .card7 {
+    background: linear-gradient(102.03deg, #ff5f6d 0%, #ffc371 98.49%);
+  }
+  
+  .card7:hover {
+    box-shadow: 2px 2px 5px #ffc371;
+  }
+  
+  .card8 {
+    background: linear-gradient(135deg, #71997a 0%, #65bda9 100%);
+  }
+  
+  .card8:hover {
+    box-shadow: 2px 2px 5px #65bda9;
+  }
+  
+  #letsgetyou {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 24px !important;
+  
+    color: #ffffff;
+  }
+  
+  .card9 {
+    background: linear-gradient(102.03deg, #005aad 5.09%, #6efafb 96.31%);
+  }
+  
+  .card9:hover {
+    box-shadow: 2px 2px 5px #6efafb;
+  }
+  
+  .burnrefrcash {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px !important;
+    line-height: 24px !important;
+  
+    color: #ffec86;
+  }
+  
+  .burnrefr {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 24px !important;
+  
+    color: #ffec86;
+  }
+  
+  .card10 {
+    background: linear-gradient(135deg, #987199 0%, #6578bd 100%);
+  }
+  
+  .card10:hover {
+    box-shadow: 2px 2px 5px #6578bd;
+  }
+  
+  // .share {
+  //   .svg7 {
+  //     box-shadow: 4px 4px 0px #ff5f6d;
+  //   }
+  // }
+  
+  #refr {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px !important;
+    line-height: 24px !important;
+    color: #ffd312;
+  }
+  
+  #creators {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    color: #ffd312;
+  }
+  
+  #started {
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 24px !important;
+  
+    color: #ffd312;
+  }

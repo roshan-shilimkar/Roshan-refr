@@ -1,0 +1,323 @@
+<div class="A15padding">
+    <!-- <div class="curvborder A15padding">
+        <div>Select Off Day</div>
+        <div>
+            <mat-select [(ngModel)]="selectedoffDay" name="food">
+                <mat-option *ngFor="let Daysss of WeekdaysList" [value]="Daysss.values">
+                    {{Daysss.Days}}
+                </mat-option>
+            </mat-select>
+        </div>
+    </div> -->
+
+    <!-- <div class="curvborder A15padding">
+        <div>Select opening and Closing Time and Holiday</div>
+
+        <table class="breaktimetable">
+            <tr>
+                <td>
+                    <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="storeLoc.opensDaily">Daily ?</mat-slide-toggle>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field appearance="legacy" class="fullWidth">
+                        <mat-label>From</mat-label>
+                        <input matInput [(ngModel)]="opensDailyS" name="opensDailyS" placeholder="07:00 AM" autocomplete="off"
+                            type="time" required>
+                        <mat-error>from is required.</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="legacy" class="fullWidth">
+                        <mat-label>To</mat-label>
+                        <input matInput [(ngModel)]="opensDailyE" name="opensDailyS" placeholder="07:00 AM" autocomplete="off"
+                            type="time" required>
+                        <mat-error>To is required.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+
+
+
+
+
+            <ng-container *ngIf="isDaily == false">
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="openSun">Sunday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="openSunS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="openSunE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="openMon">Monday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="ShopS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="ShopE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="issunday">Tuesday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="ShopS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="ShopE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="issunday">Tuesday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="ShopS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="ShopE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="issunday">Tuesday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="ShopS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="ShopE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="issunday">Tuesday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="ShopS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="ShopE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="issunday">Tuesday
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>From</mat-label>
+                            <input matInput [(ngModel)]="ShopS" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>from is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="legacy" class="fullWidth">
+                            <mat-label>To</mat-label>
+                            <input matInput [(ngModel)]="ShopE" name="opensDailyS" placeholder="07:00 AM"
+                                autocomplete="off" type="time" required>
+                            <mat-error>To is required.</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+            </ng-container>
+
+
+
+
+        </table>
+    </div>
+    <div class="curvborder A15padding">
+        <div class="">Select OffTime?</div>
+        <mat-slide-toggle class="togglePad" color="primary" [(ngModel)]="isbreak">MON</mat-slide-toggle>
+        
+        <div *ngIf="isbreak==true">Select Break Time</div>
+        <table *ngIf="isbreak==true">
+            <tr>
+                <td>
+                    <mat-form-field appearance="legacy" class="fullWidth">
+                        <mat-label>From</mat-label>
+                        <input matInput [(ngModel)]="breakS" name="opensDailyS" placeholder="07:00 AM"
+                            autocomplete="off" type="time" required>
+                        <mat-error>from is required.</mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field appearance="legacy" class="fullWidth">
+                        <mat-label>To</mat-label>
+                        <input matInput [(ngModel)]="breakE" name="opensDailyS" placeholder="07:00 PM"
+                            autocomplete="off" type="time" required>
+                        <mat-error>To is required.</mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <div>
+        <button mat-button (click)="printvalue()">
+            print all value
+        </button>
+    </div> -->
+
+    <div>
+        Message Will Be
+    </div>
+
+    <div>
+
+    </div>
+    <div>
+        <!-- <span *ngIf="weekstartday!=''">{{weekstartday}}-{{weekendday}} :</span> <span *ngIf="ShopS!=''">{{ShopS}} -
+        </span><span *ngIf="isbreak==true">{{breakS}} & {{breakE}} -</span>
+        {{ShopE}} <span *ngIf="selectedoffDay!=''">, {{selectedoffDay}} closed</span> -->
+
+        <div>Store Timing: {{storeLoc.opensDailyS}} <span *ngIf="storeLoc.BreakDaily==true">- {{storeLoc.BreakStart}} &
+                {{storeLoc.BreakEnd}}</span> - {{storeLoc.opensDailyE }}</div>
+        <div *ngIf="storeLoc.opensDaily == false">
+            All days open except
+            <span *ngIf="storeLoc.openSun==false">Sunday</span>
+
+            <span *ngIf="storeLoc.openSun==false && storeLoc.openMon==false">, </span>
+            <span *ngIf="storeLoc.openMon==false">Monday</span>
+
+            <span *ngIf="(storeLoc.openSun==false || storeLoc.openMon==false) && storeLoc.openTue==false">, </span>
+            <span *ngIf="storeLoc.openTue==false">Tuesday</span>
+
+            <span
+                *ngIf="(storeLoc.openSun==false || storeLoc.openMon==false || storeLoc.openTue ==false) && storeLoc.openWed==false">,
+            </span>
+            <span *ngIf="storeLoc.openWed==false">Wednesday</span>
+
+            <span
+                *ngIf="(storeLoc.openSun==false || storeLoc.openMon==false || storeLoc.openTue ==false || storeLoc.openWed ==false) && storeLoc.openThu==false">,
+            </span>
+            <span *ngIf="storeLoc.openThu==false">Thursday</span>
+
+            <span
+                *ngIf="(storeLoc.openSun==false || storeLoc.openMon==false || storeLoc.openTue ==false || storeLoc.openWed ==false || storeLoc.openThu==false) && storeLoc.openFri==false">,
+            </span>
+            <span *ngIf="storeLoc.openFri==false">Friday</span>
+
+            <span
+                *ngIf="(storeLoc.openSun==false || storeLoc.openMon==false || storeLoc.openTue ==false || storeLoc.openWed ==false || storeLoc.openThu==false || storeLoc.openFri ==false) && storeLoc.openSat==false">,
+            </span>
+            <span *ngIf="storeLoc.openSat==false">Saturday</span>
+
+        </div>
+    </div>
+    <div *ngIf="storeLoc.opensDaily == true">
+        <span>All days open (Monday-Sunday)</span>
+    </div>
+
+    {{storeLoc.opensDailyE}}
+
+
+    {{storeLoc.opensDailyE}}
+
+
+    {{storeLoc.opensDailyE > 12 ? "storeLoc.opensDailyE - 12" : "storeLoc.opensDailyE"}} 
+    <!-- openSun==false || openMon==false || openTue ==false || openWed ==false || openThu==false || openFri ==false || openSat==false  -->
+</div>
