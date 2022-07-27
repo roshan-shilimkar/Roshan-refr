@@ -37,7 +37,7 @@ export class BurnComponent implements OnInit {
 
   cats: Array<any> = [
     {
-      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2Ffashion_and_accessories1657891491004?alt=media&token=368fd9cf-14f6-4e2a-9f96-09ebc0474e6e",
+      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1658853808624?alt=media&token=2ed70419-d7d4-46c2-9c10-c66d98cc29f2",
       tit: "Fashion and Accessories"
     },
     {
@@ -45,19 +45,19 @@ export class BurnComponent implements OnInit {
       tit: "Active Wear"
     },
     {
-      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1655457945725?alt=media&token=83ab5606-e5fa-4607-88cf-327b880f39a0",
+      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1658853940789?alt=media&token=3fdda69b-fd56-41fe-b143-605553e691d9",
       tit: "Beauty and Wellness"
     },
     {
-      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2Felectronics1655377187933?alt=media&token=607291d0-4288-477e-ada8-8d7f7fc24952",
+      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1658854064295?alt=media&token=534f7899-66e3-45f7-b7dd-54af245fdd7d",
       tit: "Electronics"
     },
     {
-      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1655458198511?alt=media&token=df0143af-f51e-4c0c-b38e-8c6e7ac02af5",
+      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1658853745840?alt=media&token=df14ac05-dcf6-41e7-8a0c-4a2bd856e6d1",
       tit: "Food and Beverages"
     },
     {
-      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1655457945725?alt=media&token=83ab5606-e5fa-4607-88cf-327b880f39a0",
+      img: "https://firebasestorage.googleapis.com/v0/b/refr/o/burn%2F1658853618028?alt=media&token=b5f234a9-66cc-4a2c-ad28-fe651ef93f16",
       tit: "Personal Care"
     }
   ];

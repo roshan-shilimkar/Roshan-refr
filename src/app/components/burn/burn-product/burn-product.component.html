@@ -1,0 +1,275 @@
+<header>
+    <p style="display: flex; align-items: center;
+    padding: 4px 0 !important;
+    margin: 0 0 4px 0 !important;" class="b_white">
+        <button mat-icon-button [routerLink]=" '/burn' ">
+            <mat-icon>arrow_back_ios_new</mat-icon>
+        </button>
+    </p>
+</header>
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col col-100">
+            <div class="prod-image">
+                <img *ngFor="let pic of product.burnPics" [src]="pic" alt="">
+            </div>
+            <div class="price-section">
+                <div>
+                    <p>₹{{product.cost}}</p>
+                    <div class="right">
+                        <button mat-button class="btn-primary ml-auto">
+                            <svg width="25" height="25" viewBox="0 0 18 18" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.00026 15.0454C12.4543 15.0454 15.2544 12.2454 15.2544 8.79128C15.2544 5.3372 12.4543 2.53711 9.00026 2.53711C5.54618 2.53711 2.74609 5.3372 2.74609 8.79128C2.74609 12.2454 5.54618 15.0454 9.00026 15.0454Z"
+                                    fill="#FECB00" />
+                                <path
+                                    d="M8.87299 13.6362C11.5373 13.6362 13.6972 11.4764 13.6972 8.81208C13.6972 6.14777 11.5373 3.98792 8.87299 3.98792C6.20868 3.98792 4.04883 6.14777 4.04883 8.81208C4.04883 11.4764 6.20868 13.6362 8.87299 13.6362Z"
+                                    fill="#EFA900" />
+                                <path d="M6.50336 6.77167H8.87253V12.5604L5.50586 8.37L6.50336 6.77167Z"
+                                    fill="#E19100" />
+                                <path d="M11.5196 6.83752H9.15039V12.6267L12.5171 8.43586L11.5196 6.83752Z"
+                                    fill="#E19100" />
+                                <path d="M6.50336 6.63165H8.87253V12.1637L5.50586 8.15915L6.50336 6.63165Z"
+                                    fill="#FECB00" />
+                                <path d="M11.4746 6.68292L9.10547 6.68334V12.2154L12.4721 8.21084L11.4746 6.68292Z"
+                                    fill="#FECB00" />
+                                <path d="M10.2749 5.37292L9.28906 6.30418L11.2836 6.30709L10.2749 5.37292Z"
+                                    fill="#E19100" />
+                                <path d="M7.78466 5.37292L6.79883 6.30418L8.79341 6.30709L7.78466 5.37292Z"
+                                    fill="#E19100" />
+                                <path d="M10.2999 5.18292L9.31445 6.11417L11.3086 6.11709L10.2999 5.18292Z"
+                                    fill="#FECB00" />
+                                <path d="M7.78466 5.18292L6.79883 6.11417L8.79341 6.11709L7.78466 5.18292Z"
+                                    fill="#FECB00" />
+                            </svg>
+                            <span style="margin-left: -2px !important;">{{mine.acBalC}}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bucketlist">
+                    <button mat-button [disabled]="makingChanges">
+                        <mat-icon>{{mine.bucket?.includes(product.id) ? 'remove_circle' : 'add_circle'}}</mat-icon>
+                        <span>Bucket List</span>
+                        <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.33805 15.375L1.00531 7.5625C0.958292 6.59662 1.20057 6.19585 2.67124 6H11.6673C12.5768 6.30029 12.8563 6.64632 13 7.5625L11.6673 15.375C11.4886 15.8217 11.2497 15.9479 10.6677 16H3.67079C2.80467 15.9915 2.51854 15.8295 2.33805 15.375Z"
+                                stroke="white" stroke-width="1.5" />
+                            <path d="M4.14844 9.08057L4.75928 9.69141L5.98096 8.46973" stroke="white" stroke-width="0.9"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4.14844 12.7456L4.75928 13.3564L5.98096 12.1348" stroke="white" stroke-width="0.9"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 9H10" stroke="white" stroke-width="0.9" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M8 13H10" stroke="white" stroke-width="0.9" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2.41406 5.92452C3.33032 -0.488245 10.355 -0.793152 11.5767 5.92568" stroke="white"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="burn-on-refr">
+                <p>{{product.title || 'No Name'}}</p><a>
+                    <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.66527 12.5725C2.55476 12.4252 1.39754 11.6659 0.944793 10.9503C0.32746 9.97635 0.335433 8.93843 0.529062 7.86907C1.03591 5.06874 0.525644 4.71007 0 4.15332C0.900942 4.48991 1.74266 4.76856 2.29165 5.36725C2.96821 3.55628 3.155 2.17184 5.80373 0C5.71432 0.507094 5.55201 1.01971 5.54176 1.53839C5.50987 3.15734 7.00878 4.6422 7.32428 5.00804C8.18137 6.00126 8.64038 7.08221 8.61419 8.27573L8.61077 8.44734C9.05498 8.1113 9.34257 7.53413 9.42116 6.79749C9.98382 7.40832 10.1279 8.51631 9.88986 9.28054C9.30669 11.1517 8.03273 12.1278 6.01159 12.5653C5.42843 12.6889 4.29343 12.6564 3.66527 12.5725Z"
+                            fill="url(#paint0_linear_1014_2879)" />
+                        <path style="mix-blend-mode:multiply" opacity="0.42"
+                            d="M3.66527 12.5725C2.55476 12.4252 1.39754 11.6659 0.944793 10.9503C0.32746 9.97635 0.335433 8.93843 0.529062 7.86907C1.03591 5.06874 0.525644 4.71007 0 4.15332C0.900942 4.48991 1.74266 4.76856 2.29165 5.36725C2.96821 3.55628 3.155 2.17184 5.80373 0C5.71432 0.507094 5.55201 1.01971 5.54176 1.53839C5.50987 3.15734 7.00878 4.6422 7.32428 5.00804C8.18137 6.00126 8.64038 7.08221 8.61419 8.27573L8.61077 8.44734C9.05498 8.1113 9.34257 7.53413 9.42116 6.79749C9.98382 7.40832 10.1279 8.51631 9.88986 9.28054C9.30669 11.1517 8.03273 12.1278 6.01159 12.5653C5.42843 12.6889 4.29343 12.6564 3.66527 12.5725Z"
+                            fill="url(#paint1_linear_1014_2879)" />
+                        <path
+                            d="M3.65674 12.5828C2.84919 12.4564 2.0052 11.8053 1.67831 11.1917C1.23011 10.3563 1.23581 9.4663 1.37647 8.54978C1.74494 6.14839 1.37647 5.84105 0.992065 5.36375C1.64699 5.65233 2.25862 5.89071 2.65841 6.40277C3.14988 4.85003 3.28485 3.66258 5.21146 1.80029C5.14654 2.23565 5.02865 2.67488 5.02125 3.11962C4.9979 4.50792 6.11525 5.48238 6.34475 5.79635C6.96778 6.64721 7.81291 7.42137 7.81633 8.26285C7.81918 9.03535 7.21494 9.95243 7.21836 9.80234C7.74685 9.67984 8.89666 9.08501 9.18597 8.43777C9.44794 9.54134 8.90577 10.3823 8.55155 10.8518C7.95984 11.6359 7.21779 12.1993 6.0116 12.5624C5.59587 12.6876 4.11347 12.6545 3.65674 12.5828Z"
+                            fill="url(#paint2_linear_1014_2879)" />
+                        <path style="mix-blend-mode:multiply" opacity="0.42"
+                            d="M3.65674 12.5828C2.84919 12.4564 2.0052 11.8053 1.67831 11.1917C1.23011 10.3563 1.23581 9.4663 1.37647 8.54978C1.74494 6.14839 1.37647 5.84105 0.992065 5.36375C1.64699 5.65233 2.25862 5.89071 2.65841 6.40277C3.14988 4.85003 3.28485 3.66258 5.21146 1.80029C5.14654 2.23565 5.02865 2.67488 5.02125 3.11962C4.9979 4.50792 6.11525 5.48238 6.34475 5.79635C6.96778 6.64721 7.81291 7.42137 7.81633 8.26285C7.81918 9.03535 7.21494 9.95243 7.21836 9.80234C7.74685 9.67984 8.89666 9.08501 9.18597 8.43777C9.44794 9.54134 8.90577 10.3823 8.55155 10.8518C7.95984 11.6359 7.21779 12.1993 6.0116 12.5624C5.59587 12.6876 4.11347 12.6545 3.65674 12.5828Z"
+                            fill="url(#paint3_linear_1014_2879)" />
+                        <path
+                            d="M4.03206 12.5732C3.47048 12.4642 2.96439 12.1721 2.59807 11.7455C2.27346 11.3592 2.14532 10.7225 2.27346 10.11C2.47676 9.1394 2.52574 7.82614 2.27346 7.44651C2.7057 7.67606 3.10947 7.86587 3.37315 8.2742C3.69776 7.03929 3.60095 6.23533 4.87434 4.75488C4.83163 5.10085 4.75361 5.45014 4.74905 5.80328C4.73368 6.90686 5.45181 7.42554 5.80604 7.78972C6.49456 8.49933 6.90573 9.24755 6.90801 9.91632C6.90801 10.5327 6.62326 10.7126 6.27587 11.01C6.77759 10.8996 7.12726 10.776 7.44504 10.4505C7.5635 11.3333 6.27587 12.3922 5.31171 12.5931C4.84416 12.6935 4.33389 12.63 4.03206 12.5732Z"
+                            fill="url(#paint4_linear_1014_2879)" />
+                        <path style="mix-blend-mode:multiply" opacity="0.42"
+                            d="M4.03206 12.5732C3.47048 12.4642 2.96439 12.1721 2.59807 11.7455C2.27346 11.3592 2.14532 10.7225 2.27346 10.11C2.47676 9.1394 2.52574 7.82614 2.27346 7.44651C2.7057 7.67606 3.10947 7.86587 3.37315 8.2742C3.69776 7.03929 3.60095 6.23533 4.87434 4.75488C4.83163 5.10085 4.75361 5.45014 4.74905 5.80328C4.73368 6.90686 5.45181 7.42554 5.80604 7.78972C6.49456 8.49933 6.90573 9.24755 6.90801 9.91632C6.90801 10.5327 6.62326 10.7126 6.27587 11.01C6.77759 10.8996 7.12726 10.776 7.44504 10.4505C7.5635 11.3333 6.27587 12.3922 5.31171 12.5931C4.84416 12.6935 4.33389 12.63 4.03206 12.5732Z"
+                            fill="url(#paint5_linear_1014_2879)" />
+                        <path
+                            d="M4.24504 12.5921C3.90335 12.5248 3.52805 12.341 3.29512 12.0519C3.0884 11.7948 3.01493 11.3026 3.13111 10.8992C3.34752 10.1449 3.29171 9.37352 3.13111 9.1197C3.40618 9.27309 3.66359 9.40001 3.83159 9.67149C4.03832 8.84656 3.97852 8.30967 4.78834 7.32031C4.76101 7.55151 4.71146 7.78492 4.70804 8.02108C4.69836 8.75828 5.15624 9.1048 5.38176 9.34924C5.7527 9.73494 5.95834 10.2429 5.95695 10.7701C5.95695 11.1817 5.77414 11.4069 5.55431 11.6055C5.91651 11.5873 6.32256 11.403 6.5253 11.185C6.60048 11.7749 5.74623 12.4806 5.13175 12.6147C4.83447 12.6804 4.43696 12.6302 4.24504 12.5921Z"
+                            fill="url(#paint6_linear_1014_2879)" />
+                        <defs>
+                            <linearGradient id="paint0_linear_1014_2879" x1="5.00017" y1="-0.00165537" x2="5.00017"
+                                y2="12.6465" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#E65100" />
+                                <stop offset="1" stop-color="#FF8F00" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_1014_2879" x1="5.00017" y1="-0.00165537" x2="5.00017"
+                                y2="12.6465" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000" />
+                                <stop offset="0.04" stop-color="#FF2100" />
+                                <stop offset="0.1" stop-color="#FF4F00" />
+                                <stop offset="0.17" stop-color="#FF7900" />
+                                <stop offset="0.24" stop-color="#FF9D00" />
+                                <stop offset="0.31" stop-color="#FFBC00" />
+                                <stop offset="0.4" stop-color="#FFD400" />
+                                <stop offset="0.49" stop-color="#FFE700" />
+                                <stop offset="0.6" stop-color="#FFF500" />
+                                <stop offset="0.73" stop-color="#FFFD00" />
+                                <stop offset="1" stop-color="#FFFF00" />
+                            </linearGradient>
+                            <linearGradient id="paint2_linear_1014_2879" x1="5.12376" y1="1.80029" x2="5.12376"
+                                y2="12.6463" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF8F00" />
+                                <stop offset="1" stop-color="#FFB300" />
+                            </linearGradient>
+                            <linearGradient id="paint3_linear_1014_2879" x1="5.12376" y1="1.80029" x2="5.12376"
+                                y2="12.6463" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF0000" />
+                                <stop offset="0.04" stop-color="#FF2100" />
+                                <stop offset="0.1" stop-color="#FF4F00" />
+                                <stop offset="0.17" stop-color="#FF7900" />
+                                <stop offset="0.24" stop-color="#FF9D00" />
+                                <stop offset="0.31" stop-color="#FFBC00" />
+                                <stop offset="0.4" stop-color="#FFD400" />
+                                <stop offset="0.49" stop-color="#FFE700" />
+                                <stop offset="0.6" stop-color="#FFF500" />
+                                <stop offset="0.73" stop-color="#FFFD00" />
+                                <stop offset="1" stop-color="#FFFF00" />
+                            </linearGradient>
+                            <linearGradient id="paint4_linear_1014_2879" x1="4.83846" y1="4.75599" x2="4.83846"
+                                y2="12.6466" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFB300" />
+                                <stop offset="1" stop-color="#FFE287" />
+                            </linearGradient>
+                            <linearGradient id="paint5_linear_1014_2879" x1="4.83846" y1="4.75599" x2="4.83846"
+                                y2="12.6466" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFD54F" />
+                                <stop offset="0.05" stop-color="#FFDB43" />
+                                <stop offset="0.16" stop-color="#FFE82B" />
+                                <stop offset="0.29" stop-color="#FFF317" />
+                                <stop offset="0.44" stop-color="#FFFA0A" />
+                                <stop offset="0.63" stop-color="#FFFE02" />
+                                <stop offset="1" stop-color="#FFFF00" />
+                            </linearGradient>
+                            <linearGradient id="paint6_linear_1014_2879" x1="4.80315" y1="7.32086" x2="4.80315"
+                                y2="12.6467" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFD54F" />
+                                <stop offset="0.79" stop-color="#FFE7D1" />
+                                <stop offset="1" stop-color="#FFECF4" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    Burn on Refr
+                </a>
+            </div>
+        </div>
+        <div class="col col-100" *ngIf="false">
+            <div class="variations-all">
+                <div>
+                    <p class="variations">Related Variations</p>
+                </div>
+            </div>
+            <div class="variations-img">
+                <img width="92" style="max-width:100%;" src="assets/aditya/burn-banner-1.svg" alt="">
+            </div>
+        </div>
+        <!-- <div class=" col-100">
+            <div class="line"></div>
+        </div> -->
+        <div class="col col-100">
+            <div class="policy">
+                <div>
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="21" height="21" fill="#FFF5F6" />
+                        <rect x="2" y="2" width="17" height="17" rx="8.5" fill="white" />
+                        <rect x="2" y="2" width="17" height="17" rx="8.5" fill="#FFF5F6" />
+                        <path
+                            d="M10.5 4C10.5 4 11.4827 5.05591 13.9054 5.12792C15.9388 5.18694 16.6709 4.64807 16.6709 4.64807C16.6709 4.64807 17.8362 13.0027 15.7815 15.5C13.9346 17.7428 10.8236 18.9321 10.5 19C10.1786 18.9321 7.06762 17.7422 5.21855 15.5C3.16384 13.0027 4.32913 4.64807 4.32913 4.64807C4.32913 4.64807 5.05954 5.18871 7.09459 5.12792C9.51731 5.05591 10.5 4 10.5 4Z"
+                            fill="#C52126" />
+                        <path
+                            d="M15.3825 6.82617L9.12417 10.5767L6.78874 7.75262L5.625 8.29812L8.32787 13.5653L15.7812 7.4444L15.3825 6.82617Z"
+                            fill="white" />
+                    </svg>
+                    <span>Trusted Products</span>
+                </div>
+                <!-- <div class="vertical-line"></div> -->
+
+                <div style="margin-top: 3px;">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1762_7175)">
+                            <rect width="21" height="21" fill="#FFF5F6" />
+                            <path
+                                d="M10.4986 18.8819C15.1275 18.8819 18.8799 15.1294 18.8799 10.5005C18.8799 5.87161 15.1275 2.11914 10.4986 2.11914C5.86965 2.11914 2.11719 5.87161 2.11719 10.5005C2.11719 15.1294 5.86965 18.8819 10.4986 18.8819Z"
+                                fill="#D32027" />
+                            <path
+                                d="M10.5003 17.399C14.3104 17.399 17.399 14.3103 17.399 10.5003C17.399 6.69023 14.3104 3.60156 10.5003 3.60156C6.69023 3.60156 3.60156 6.69023 3.60156 10.5003C3.60156 14.3103 6.69023 17.399 10.5003 17.399Z"
+                                stroke="white" stroke-width="0.3" stroke-miterlimit="10" />
+                            <path d="M6.31833 9.77809L2.95312 12.6777L5.22456 15.3139L8.58976 12.4142L6.31833 9.77809Z"
+                                fill="#D32027" />
+                            <path d="M2.77344 11.5625L3.75839 11.9803L4.3695 11.1094" stroke="white" stroke-width="0.5"
+                                stroke-miterlimit="10" />
+                            <path
+                                d="M8.9858 8.63636V13H8.45739V9.19034H8.43182L7.36648 9.89773V9.3608L8.45739 8.63636H8.9858ZM11.6044 13.0597C11.3544 13.0597 11.1293 13.0099 10.929 12.9105C10.7287 12.8111 10.5682 12.6747 10.4474 12.5014C10.3267 12.3281 10.2607 12.1307 10.2493 11.9091H10.7607C10.7805 12.1065 10.87 12.2699 11.0291 12.3991C11.1896 12.527 11.3814 12.5909 11.6044 12.5909C11.7834 12.5909 11.9425 12.549 12.0817 12.4652C12.2223 12.3814 12.3324 12.2663 12.4119 12.12C12.4929 11.9723 12.5334 11.8054 12.5334 11.6193C12.5334 11.429 12.4915 11.2592 12.4077 11.1101C12.3253 10.9595 12.2116 10.8409 12.0668 10.7543C11.9219 10.6676 11.7564 10.6236 11.5703 10.6222C11.4368 10.6207 11.2997 10.6413 11.1591 10.6839C11.0185 10.7251 10.9027 10.7784 10.8118 10.8438L10.3175 10.7841L10.5817 8.63636H12.8487V9.10511H11.0249L10.8714 10.392H10.897C10.9865 10.321 11.0987 10.2621 11.2337 10.2152C11.3686 10.1683 11.5092 10.1449 11.6555 10.1449C11.9226 10.1449 12.1605 10.2088 12.3693 10.3366C12.5795 10.4631 12.7443 10.6364 12.8636 10.8565C12.9844 11.0767 13.0447 11.3281 13.0447 11.6108C13.0447 11.8892 12.9822 12.1378 12.8572 12.3565C12.7337 12.5739 12.5632 12.7457 12.3459 12.8722C12.1286 12.9972 11.8814 13.0597 11.6044 13.0597Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1762_7175">
+                                <rect width="21" height="21" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <span style="padding-top: 2px !important;">Easy Return</span>
+                </div>
+            </div>
+        </div>
+        <!-- <div class=" col-100">
+            <div class="lines"></div>
+        </div> -->
+        <div class="col col-100">
+            <div class="store-product">
+                <div class="list">
+                    <img width="61" [src]="product.storeINFO.logo" alt="">
+                </div>
+                <div class="store-details">
+                    <p class="store-name">{{product.storeINFO.name}}</p>
+                    <p class="store-desc">{{product.storeINFO.about || "Nothing to Show"}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col col-100">
+            <div class="line"></div>
+        </div> -->
+        <div class="col col-100" *ngIf="product.burnHigh && product.burnHigh !== 'Σ' ">
+            <!-- <div class="line"></div> -->
+            <div class="topmar">
+                <p class="specifications">Highlights</p>
+                <p class="benefits">{{product.burnHigh}}</p>
+            </div>
+        </div>
+        <!-- <div class="col col-100">
+            <div class="line"></div>
+        </div> -->
+        <div class="col col-100" *ngIf="product.burnSpec && product.burnSpec !== 'Σ' ">
+            <div class="topmar">
+                <p class="specifications">Specifications</p>
+                <p class="benefits">{{product.burnSpec || 'No Specifications'}}</p>
+            </div>
+        </div>
+        <!-- <div class="col col-100">
+            <div class="line"></div>
+        </div> -->
+        <div class="col col-100" *ngIf="product.burnDec && product.burnDec !== 'Σ' ">
+            <div class="topmar">
+                <p class="specifications">Description</p>
+                <p class="benefits">{{product.burnDec || 'No Description'}}</p>
+            </div>
+        </div>
+        <div class="col col-100" style="margin-bottom: 100px;">
+            <div class="amount_buy">
+                <div>
+                    <div class="amount">Amount</div>
+                    <div class="amount_price">₹{{product.cost}}</div>
+                </div>
+                <div class="buy_now">
+                    <button mat-button>buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

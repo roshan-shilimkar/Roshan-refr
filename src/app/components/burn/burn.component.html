@@ -32,44 +32,51 @@
     <button mat-icon-button [routerLink]=" '/burn-bucket' " routerLinkActive="router-link-active">
         <!--roshan Code Start From here @26 July 2022 08:30P-->
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="28" height="28" rx="14" fill="url(#paint0_linear_2172_13995)"/>
-            <path d="M9.33805 20.375L8.00531 12.5625C7.95829 11.5966 8.20057 11.1958 9.67124 11H18.6673C19.5768 11.3003 19.8563 11.6463 20 12.5625L18.6673 20.375C18.4886 20.8217 18.2497 20.9479 17.6677 21H10.6708C9.80467 20.9915 9.51854 20.8295 9.33805 20.375Z" stroke="white" stroke-width="1.5"/>
-            <path d="M11.1484 14.0806L11.7593 14.6914L12.981 13.4697" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11.1484 17.7456L11.7593 18.3564L12.981 17.1348" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15 14H17" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M15 18H17" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9.41406 10.9245C10.3303 4.51175 17.355 4.20685 18.5767 10.9257" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect width="28" height="28" rx="14" fill="url(#paint0_linear_2172_13995)" />
+            <path
+                d="M9.33805 20.375L8.00531 12.5625C7.95829 11.5966 8.20057 11.1958 9.67124 11H18.6673C19.5768 11.3003 19.8563 11.6463 20 12.5625L18.6673 20.375C18.4886 20.8217 18.2497 20.9479 17.6677 21H10.6708C9.80467 20.9915 9.51854 20.8295 9.33805 20.375Z"
+                stroke="white" stroke-width="1.5" />
+            <path d="M11.1484 14.0806L11.7593 14.6914L12.981 13.4697" stroke="white" stroke-width="0.9"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M11.1484 17.7456L11.7593 18.3564L12.981 17.1348" stroke="white" stroke-width="0.9"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15 14H17" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M15 18H17" stroke="white" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9.41406 10.9245C10.3303 4.51175 17.355 4.20685 18.5767 10.9257" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
             <defs>
-            <linearGradient id="paint0_linear_2172_13995" x1="-2.91667" y1="6.41667" x2="30.3333" y2="22.75" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FD7C85"/>
-            <stop offset="1" stop-color="#F55964"/>
-            </linearGradient>
+                <linearGradient id="paint0_linear_2172_13995" x1="-2.91667" y1="6.41667" x2="30.3333" y2="22.75"
+                    gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FD7C85" />
+                    <stop offset="1" stop-color="#F55964" />
+                </linearGradient>
             </defs>
-            </svg>
+        </svg>
         <!--roshan Code End here @26 July 2022 08:30P-->
 
     </button>
 </header>
-<div class="container" style="margin-top: 50px;">
-    <div class="row" style="margin-bottom: 80px;">
-        <div class="col col-100">
-            <div class="banner">
-                <div class="scroll">
-                    <img *ngFor="let x of burn.banners" [src]="x.img">
+
+    <div class="container">
+        <div class="row" style="margin-bottom: 80px;">
+            <div class="col col-100">
+                <div class="banner">
+                    <div class="scroll">
+                        <img *ngFor="let x of burn.banners" [src]="x.img">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col col-100">
-            <div class="category-card-container">
-                <a class="card1 category-card c_invert" *ngFor="let x of cats">
-                    <div class="img-container">
-                        <img [src]="x.img" alt="">
-                    </div>
-                    <div class="title">
-                        {{x.tit}}
-                    </div>
-                </a>
-                <!--a class="card1 category-card">
+            <div class="col col-100">
+                <div class="category-card-container">
+                    <a class="card1 category-card c_invert" *ngFor="let x of cats">
+                        <div class="img-container">
+                            <img [src]="x.img" alt="">
+                        </div>
+                        <div class="title">
+                            {{x.tit}}
+                        </div>
+                    </a>
+                    <!--a class="card1 category-card">
                 <div class="img-container">
                     <img width="101" style="max-width:100%" src="assets/aditya/accessories.webp" alt="">
                     <a>Accessories</a>
@@ -100,39 +107,39 @@
                     <a>Food & Beverages</a>
                 </div>
             </a-->
+                </div>
             </div>
-        </div>
-        <ng-container>
-            <div class="col col-100" *ngIf="noCost.length > 0">
-                <div class="card-size col col-50 col-sm-100 col-card">
-                    <div class="card-box">
-                        <div class="card-main">
-                            <div class="cost-deals">
-                                <div class="deals">
-                                    <p>no cost deals</p>
-                                    <button mat-button><span>Shop more</span>
-                                        <mat-icon>chevron_right
-                                        </mat-icon>
-                                    </button>
-                                </div>
-                                <div class="contents">
-                                    <ng-container *ngFor="let x of noCost">
-                                        <a class="card-content" style="text-decoration: none;">
-                                            <p>
-                                                <img width="100px" [src]="x.burnPic" alt="">
-                                            </p>
-                                            <!--
+            <ng-container>
+                <div class="col col-100" *ngIf="noCost.length > 0">
+                    <div class="card-size col col-50 col-sm-100 col-card">
+                        <div class="card-box">
+                            <div class="card-main">
+                                <div class="cost-deals">
+                                    <div class="deals">
+                                        <p>no cost deals</p>
+                                        <button mat-button><span>Shop more</span>
+                                            <mat-icon>chevron_right
+                                            </mat-icon>
+                                        </button>
+                                    </div>
+                                    <div class="contents">
+                                        <ng-container *ngFor="let x of noCost">
+                                            <a class="card-content" style="text-decoration: none;">
+                                                <p>
+                                                    <img width="100px" [src]="x.burnPic" alt="">
+                                                </p>
+                                                <!--
                                                 roshan Code Start From here @26 July 2022 07:12P
                                             -->
-                                            <p class="textC"><span class="discount-price">₹{{x.costBurn}} </span><span
-                                                    class="zero-price purple_txt">₹0</span></p>
-                                            <!--
+                                                <p class="textC"><span class="discount-price">₹{{x.costBurn}}
+                                                    </span><span class="zero-price purple_txt">₹0</span></p>
+                                                <!--
                                                 roshan Code Ends here @26 July 2022 07:12P
                                             -->
-                                            <!-- <p ></p> -->
+                                                <!-- <p ></p> -->
 
-                                            <!-- Roshan Comment this on 26 July 2022 start here-->
-                                            <!-- <a mat-icon-button>
+                                                <!-- Roshan Comment this on 26 July 2022 start here-->
+                                                <!-- <a mat-icon-button>
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <rect width="24" height="24" rx="12"
@@ -149,88 +156,88 @@
                                                     </defs>
                                                 </svg>
                                             </a> -->
-                                            <!-- Roshan Comment this on 26 July 2022 end here-->
+                                                <!-- Roshan Comment this on 26 July 2022 end here-->
 
-                                        </a>
-                                    </ng-container>
+                                            </a>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            <div class="col col-100">
+                <div class="card-size col col-50 col-sm-100 col-card">
+                    <div class="card-box">
+                        <div class="card-main">
+                            <div class="cost-deals">
+                                <div class="deals">
+                                    <p>
+                                        <i>
+                                            FLA
+                                            <svg width="13" height="16" viewBox="0 0 13 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.29371 16C3.51452 15.558 3.71686 15.1518 3.92001 14.7462L6.35617 9.87446C6.4469 9.6925 6.44449 9.69192 6.16667 9.69192H0L9.66914 0C9.68463 0.0363452 9.69005 0.0745823 9.68509 0.112476C9.68012 0.15037 9.66488 0.18716 9.64024 0.220697C8.80517 1.88923 7.97063 3.55777 7.13663 5.22631C6.98729 5.5239 6.84918 5.82501 6.68618 6.11908C6.6107 6.25584 6.66289 6.27228 6.83794 6.27169C8.80035 6.26817 10.7625 6.26817 12.7244 6.27169C12.775 6.27169 12.8255 6.27169 12.8761 6.27169C13.0038 6.26582 13.0367 6.29458 12.9564 6.37617C12.8761 6.45776 12.7862 6.54697 12.7011 6.63267L3.50729 15.8374C3.45694 15.9044 3.38326 15.9605 3.29371 16V16Z"
+                                                    fill="#FFD83E" />
+                                            </svg>
+                                            H SALE
+                                        </i>
+                                    </p>
+                                    <button mat-button routerLink="/burn-list/flashSale">
+                                        <span>Shop more</span>
+                                        <mat-icon>chevron_right
+                                        </mat-icon>
+                                    </button>
+                                </div>
+                                <div class="contents">
+                                    <a class="card-content" *ngFor="let x of noCost">
+                                        <p><img width="100px" [src]="x.burnPic" alt="">
+                                        </p>
+                                        <!--roshan Code Start From here @26 July 2022 07:12P -->
+                                        <p class="textC"> <span class="discount-price">₹{{x.costBurn}} </span> <span
+                                                class="zero-price">₹{{x.price}}</span></p>
+                                        <!--roshan Code Ends here @26 July 2022 07:12P -->
+                                        <!-- <p class="zero-price">₹ {{x.costBurn}}</p>
+                                    <p class="discount-price">₹{{x.price}}</p> -->
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </ng-container>
-        <div class="col col-100">
-            <div class="card-size col col-50 col-sm-100 col-card">
-                <div class="card-box">
-                    <div class="card-main">
-                        <div class="cost-deals">
-                            <div class="deals">
-                                <p>
-                                    <i>
-                                        FLA
-                                        <svg width="13" height="16" viewBox="0 0 13 16" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M3.29371 16C3.51452 15.558 3.71686 15.1518 3.92001 14.7462L6.35617 9.87446C6.4469 9.6925 6.44449 9.69192 6.16667 9.69192H0L9.66914 0C9.68463 0.0363452 9.69005 0.0745823 9.68509 0.112476C9.68012 0.15037 9.66488 0.18716 9.64024 0.220697C8.80517 1.88923 7.97063 3.55777 7.13663 5.22631C6.98729 5.5239 6.84918 5.82501 6.68618 6.11908C6.6107 6.25584 6.66289 6.27228 6.83794 6.27169C8.80035 6.26817 10.7625 6.26817 12.7244 6.27169C12.775 6.27169 12.8255 6.27169 12.8761 6.27169C13.0038 6.26582 13.0367 6.29458 12.9564 6.37617C12.8761 6.45776 12.7862 6.54697 12.7011 6.63267L3.50729 15.8374C3.45694 15.9044 3.38326 15.9605 3.29371 16V16Z"
-                                                fill="#FFD83E" />
-                                        </svg>
-                                        H SALE
-                                    </i>
+            <div class="col col-100 adiCurated">
+                <div class="curated">
+                    <p>CURATED<br>FOR YOU</p>
+                </div>
+                <div class="adiFlex-container">
+                    <div class="curated-for-you" *ngFor="let x of noCost">
+                        <a class="curated-card">
+                            <div class="img-curated" style="background-image: url('assets/other/locate.svg');">
+                                <img *ngIf="x.burnPic" [src]="x.burnPic" (load)=" imgLoaded.push( x.burnPic  ) "
+                                    [class.imgLoaded]="imgLoaded.includes(x.burnPic)" />
+                            </div>
+                            <div>
+                                <p class="prod-text">{{x.title}}</p>
+                            </div>
+                            <div>
+                                <p class="prod-desc">{{x.burnAbout}}</p>
+                            </div>
+                            <!--roshan Code Start From here @26 July 2022 07:12P-->
+                            <p class="textL">
+                                <span class="discount-price">₹{{x.price}}</span>
+                                <span class="zero-price">₹{{x.costBurn}}</span>
+                            </p>
+                            <div>
+                                <p class="off">{{ ( (x.price - x.costBurn) / x.price ) * 100 | number :'1.0-0' }}% Off
                                 </p>
-                                <button mat-button routerLink="/burn-list/flashSale">
-                                    <span>Shop more</span>
-                                    <mat-icon>chevron_right
-                                    </mat-icon>
-                                </button>
                             </div>
-                            <div class="contents">
-                                <a class="card-content" *ngFor="let x of noCost">
-                                    <p><img width="100px" [src]="x.burnPic" alt="">
-                                    </p>
-                                    <!--roshan Code Start From here @26 July 2022 07:12P -->
-                                    <p class="textC"> <span class="discount-price">₹{{x.costBurn}} </span> <span
-                                            class="zero-price">₹{{x.price}}</span></p>
-                                    <!--roshan Code Ends here @26 July 2022 07:12P -->
-                                    <!-- <p class="zero-price">₹ {{x.costBurn}}</p>
-                                    <p class="discount-price">₹{{x.price}}</p> -->
-                                </a>
-                            </div>
-                        </div>
+                            <!--roshan Code End From here @26 July 2022 07:12P-->
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col col-100 adiCurated">
-            <div class="curated">
-                <p>CURATED</p>
-                <p>FOR YOU</p>
-            </div>
-            <div class="adiFlex-container">
-                <div class="curated-for-you" *ngFor="let x of noCost">
-                    <a class="curated-card">
-                        <div class="img-curated" style="background-image: url('assets/other/locate.svg');">
-                            <img *ngIf="x.burnPic" [src]="x.burnPic" (load)=" imgLoaded.push( x.burnPic  ) "
-                                [class.imgLoaded]="imgLoaded.includes(x.burnPic)" />
-                        </div>
-                        <div>
-                            <p class="prod-text">{{x.title}}</p>
-                        </div>
-                        <div>
-                            <p class="prod-desc">{{x.burnAbout}}</p>
-                        </div>
-                        <!--roshan Code Start From here @26 July 2022 07:12P-->
-                        <p class="textL">
-                            <span class="discount-price">₹{{x.price}}</span>
-                            <span class="zero-price">₹{{x.costBurn}}</span>
-                        </p>
-                        <div>
-                            <p class="off">{{ ( (x.price - x.costBurn) / x.price ) * 100 | number :'1.0-0' }}% Off</p>
-                        </div>
-                        <!--roshan Code End From here @26 July 2022 07:12P-->
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
-</div>

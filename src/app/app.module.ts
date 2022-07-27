@@ -45,6 +45,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { DistancecalculatorComponent } from './components/distancecalculator/distancecalculator.component';
 import { BurnComponent } from './components/burn/burn.component';
 import { FashionComponent } from './components/fashion/fashion.component';
+import { BurnCatComponent } from './components/burn/burn-cat/burn-cat.component';
+import { BurnProductComponent } from './components/burn/burn-product/burn-product.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { FashionComponent } from './components/fashion/fashion.component';
     DistancecalculatorComponent,
     BurnComponent,
     FashionComponent,
+    BurnCatComponent,
+    BurnProductComponent,
   ],
   imports: [
     BrowserModule,

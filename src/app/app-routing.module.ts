@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BlogComponent } from './components/blogs/blog/blog.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { BurnCatComponent } from './components/burn/burn-cat/burn-cat.component';
+import { BurnProductComponent } from './components/burn/burn-product/burn-product.component';
 import { BurnComponent } from './components/burn/burn.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AddnewcontactComponent } from './components/contactsync/addnewcontact/addnewcontact.component';
@@ -21,7 +23,7 @@ const routes: Routes = [
   {
     path: "", component: TabsComponent,
     children: [
-      { path: "", redirectTo: "/Burn", pathMatch: "full" },
+      { path: "", redirectTo: "/Burnproduct", pathMatch: "full" },
       { path: "blogs", component: BlogsComponent },
       { path: "blogs/:id", component: BlogComponent },
       { path: "blogs/business", component: BlogsComponent },
@@ -38,7 +40,10 @@ const routes: Routes = [
       { path: "timestamp", component: TimestampcompareComponent },
       { path: "cust_Wallet", component: CustomerWalletComponent },
       { path: "DistanceCalc", component: DistancecalculatorComponent },
-      { path: "Burn", component: BurnComponent }
+      { path: "Burn", component: BurnComponent },
+      { path: "Burncat", component: BurnCatComponent },
+      { path: "Burnproduct", component: BurnProductComponent }
+
     ]
   }
 ];
