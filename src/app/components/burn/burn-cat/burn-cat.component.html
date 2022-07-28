@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="accessories">
-                <div class="title">NEW IN</div>
+                <div class="burncattitle">NEW IN</div>
                 <div class="access-img">
                     <a *ngFor="let x of newIN" [routerLink]=" x.url ">
                         <img [src]="x.img" alt="">
@@ -96,11 +96,11 @@
         </div>
         <div class="col col-100 adiCurated">
             <div class="curated">
-                <div class="title">CURATED<br>FOR YOU</div>
+                <div class="burncattitle">CURATED<br>FOR YOU</div>
             </div>
             <div class="adiFlex-container">
                 <div class="curated-for-you" *ngFor="let x of curated">
-                    <a class="card1 curated-card">
+                    <a class="card1 curated-card" href="#">
                         <div class="img-curated">
                             <img [src]="x.burnPic" class="imgLoaded"/>
                         </div>

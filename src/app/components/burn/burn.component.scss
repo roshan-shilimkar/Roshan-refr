@@ -23,6 +23,7 @@ header {
     min-width: 170px !important;
     max-width: 170px !important;
 }
+
 form {
     input[type="text"] {
         //width: 240px;
@@ -116,8 +117,42 @@ form {
     gap: 10px;
     overflow-x: auto;
     padding: 2px 0;
-    margin: 0 7px;
-    // margin-top: -16px;
+    margin-left: 10px;
+    margin-top: -16px;
+
+    .category-card {
+        border-radius: 10px;
+        background-color: #ffffff;
+        position: relative;
+    }
+
+    $a1: -7px 0px 0px 0px #87d4fe, 0px 1px 0px 0px #87d4fe, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+    $a2: -7px 0px 0px 0px #cfa9d4, 0px 1px 0px 0px #cfa9d4, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+    $a3: -7px 0px 0px 0px #456d47, 0px 1px 0px 0px #456d47, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+    $a4: -7px 0px 0px 0px #fed79c, 0px 1px 0px 0px #fed79c, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+    //$a5:  -7px 0px 0px 0px #fed79c,  0px 1px 0px 0px #fed79c, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+
+    $my-colors: (
+        $a1,
+        $a2,
+        $a3,
+        $a4,
+        $a1,
+        $a2,
+        $a3,
+        $a4,
+        $a1,
+        $a2,
+        $a3,
+        $a4
+    );
+
+@for $colIndex from 1 through length($my-colors) {
+    .category-card:nth-child(#{length($my-colors)}n + #{$colIndex}) {
+        //box-shadow: unquote(nth($my-colors, $colIndex));
+        box-shadow: nth($my-colors, $colIndex);
+    }
+}
 }
 
 .category-card-container::-webkit-scrollbar {
@@ -433,18 +468,29 @@ form {
 .category-card-container .category-card:nth-child(12n+1) {
     box-shadow: -7px 0 #cfa9d4, 0 1px #cfa9d4, 0 0 10px -1px #0000001f;
 }
+
 .category-card-container .category-card:nth-child(12n+2) {
     box-shadow: -7px 0 #cfa9d4, 0 1px #cfa9d4, 0 0 10px -1px #0000001f;
 }
+
 .category-card-container .category-card:nth-child(12n+3) {
     box-shadow: -7px 0 #456d47, 0 1px #456d47, 0 0 10px -1px #0000001f;
 }
+
 .category-card-container .category-card:nth-child(12n+4) {
     box-shadow: -7px 0 #87D4FE, 0 1px #87D4FE, 0 0 10px -1px #0000001f;
 }
+
 .category-card-container .category-card:nth-child(12n+5) {
     box-shadow: -7px 0 #E5B681, 0 1px #E5B681, 0 0 10px -1px #0000001f;
 }
+
 .category-card-container .category-card:nth-child(12n+6) {
     box-shadow: -7px 0 #FC9BC2, 0 1px #FC9BC2, 0 0 10px -1px #0000001f;
 }
+
+
+// $a1: -7px 0px 0px 0px #87d4fe, 0px 1px 0px 0px #87d4fe, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+// $a2: -7px 0px 0px 0px #cfa9d4, 0px 1px 0px 0px #cfa9d4, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+// $a3: -7px 0px 0px 0px #456d47, 0px 1px 0px 0px #456d47, 0px 0px 10px -1px rgb(0 0 0 / 12%);
+// $a4: -7px 0px 0px 0px #fed79c, 0px 1px 0px 0px #fed79c, 0px 0px 10px -1px rgb(0 0 0 / 12%);
