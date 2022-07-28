@@ -1,3 +1,16 @@
+<!--div class="col col-100">
+    <div class="header">
+        <p>
+            <mat-icon>
+
+                arrow_back_ios_new
+
+            </mat-icon>
+        </p>
+    </div>
+
+</div-->
+
 <header>
     <p style="display: flex; align-items: center;
     padding: 4px 0 !important;
@@ -6,16 +19,34 @@
             <mat-icon>arrow_back_ios_new</mat-icon>
         </button>
     </p>
+
 </header>
-<div class="container" style="margin-top: 50px;">
+
+<div class="container">
     <div class="row">
+        <!--div class="col col-100">
+            <div class="overview-section">
+
+                <ul>
+                    <li><a>Overview</a></li>
+                    <li><a>Product Details</a></li>
+                    <li><a>For you</a></li>
+                </ul>
+
+            </div>
+        </div-->
+
         <div class="col col-100">
             <div class="prod-image">
-                <img *ngFor="let pic of product.burnPics" [src]="pic" alt="">
+                 <!--img *ngIf="product.burnPic" [src]="product.burnPic"
+                    alt=""-->
+                <img *ngFor="let pic of product.burnPics" [src]="pic" 
+                alt="">
             </div>
             <div class="price-section">
                 <div>
                     <p>₹{{product.cost}}</p>
+
                     <div class="right">
                         <button mat-button class="btn-primary ml-auto">
                             <svg width="25" height="25" viewBox="0 0 18 18" fill="none"
@@ -43,14 +74,24 @@
                                 <path d="M7.78466 5.18292L6.79883 6.11417L8.79341 6.11709L7.78466 5.18292Z"
                                     fill="#FECB00" />
                             </svg>
-                            <span style="margin-left: -2px !important;">{{mine.acBalC}}</span>
+                            <span>{{mine.acBalC}}</span>
                         </button>
                     </div>
                 </div>
                 <div class="bucketlist">
                     <button mat-button [disabled]="makingChanges">
+                    <!--svg class="add" width="16" height="30" viewBox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.00001 14.6668C11.6819 14.6668 14.6667 11.6821 14.6667 8.00016C14.6667 4.31826 11.6819 1.3335 8.00001 1.3335C4.31811 1.3335 1.33334 4.31826 1.33334 8.00016C1.33334 11.6821 4.31811 14.6668 8.00001 14.6668Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 5.3335V10.6668" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5.33334 8H10.6667" stroke="white" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg-->
                         <mat-icon>{{mine.bucket?.includes(product.id) ? 'remove_circle' : 'add_circle'}}</mat-icon>
                         <span>Bucket List</span>
+
                         <svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M2.33805 15.375L1.00531 7.5625C0.958292 6.59662 1.20057 6.19585 2.67124 6H11.6673C12.5768 6.30029 12.8563 6.64632 13 7.5625L11.6673 15.375C11.4886 15.8217 11.2497 15.9479 10.6677 16H3.67079C2.80467 15.9915 2.51854 15.8295 2.33805 15.375Z"
@@ -69,8 +110,10 @@
                     </button>
                 </div>
             </div>
+
             <div class="burn-on-refr">
-                <p>{{product.title || 'No Name'}}</p><a>
+                <p>{{product.title || 'No Name'}}</p>
+                <a>
                     <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M3.66527 12.5725C2.55476 12.4252 1.39754 11.6659 0.944793 10.9503C0.32746 9.97635 0.335433 8.93843 0.529062 7.86907C1.03591 5.06874 0.525644 4.71007 0 4.15332C0.900942 4.48991 1.74266 4.76856 2.29165 5.36725C2.96821 3.55628 3.155 2.17184 5.80373 0C5.71432 0.507094 5.55201 1.01971 5.54176 1.53839C5.50987 3.15734 7.00878 4.6422 7.32428 5.00804C8.18137 6.00126 8.64038 7.08221 8.61419 8.27573L8.61077 8.44734C9.05498 8.1113 9.34257 7.53413 9.42116 6.79749C9.98382 7.40832 10.1279 8.51631 9.88986 9.28054C9.30669 11.1517 8.03273 12.1278 6.01159 12.5653C5.42843 12.6889 4.29343 12.6564 3.66527 12.5725Z"
@@ -156,22 +199,40 @@
                         </defs>
                     </svg>
                     Burn on Refr
+
                 </a>
             </div>
+
+            <!-- <div>
+                <p class="prod-desc">{{product.burnDecShort || 'No Short Description'}}</p>
+            </div> -->
         </div>
+
+        <div class="col col-100" *ngIf="false">
+            <div class="line"></div>
+        </div>
+        
         <div class="col col-100" *ngIf="false">
             <div class="variations-all">
                 <div>
                     <p class="variations">Related Variations</p>
+                    <!--p class="color">3 Colors</p-->
                 </div>
             </div>
+            <!--div class="button-right">
+                    <button mat-button>
+                        <mat-icon>chevron_right</mat-icon>
+                    </button>
+                </div-->
             <div class="variations-img">
                 <img width="92" style="max-width:100%;" src="assets/aditya/burn-banner-1.svg" alt="">
             </div>
         </div>
+
         <!-- <div class=" col-100">
             <div class="line"></div>
         </div> -->
+
         <div class="col col-100">
             <div class="policy">
                 <div>
@@ -186,11 +247,80 @@
                             d="M15.3825 6.82617L9.12417 10.5767L6.78874 7.75262L5.625 8.29812L8.32787 13.5653L15.7812 7.4444L15.3825 6.82617Z"
                             fill="white" />
                     </svg>
+
                     <span>Trusted Products</span>
                 </div>
+
                 <!-- <div class="vertical-line"></div> -->
 
-                <div style="margin-top: 3px;">
+                <!-- <div>
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1762_7152)">
+                            <rect width="21" height="21" fill="#FFF5F6" />
+                            <path d="M13.5137 7.72656H4.0809L4.07812 13.045H13.5137V7.72656Z" fill="#D32027" />
+                            <path d="M13.5137 13.0469H4.07812V15.8387H13.5137V13.0469Z" fill="#D32027" />
+                            <path d="M13.5186 8.63867H13.3047V15.8384H13.5186V8.63867Z" fill="#D32027" />
+                            <path
+                                d="M17.8251 8.85418C17.8272 8.79926 17.8082 8.74571 17.7724 8.7053C17.7366 8.66489 17.6868 8.64093 17.6339 8.63867H13.5156V9.43196H17.8206L17.8251 8.85418Z"
+                                fill="#D32027" />
+                            <path
+                                d="M20.3612 13.6916V15.2672C20.3612 15.3422 20.347 15.4165 20.3193 15.4858C20.2917 15.5551 20.2512 15.618 20.2002 15.6711C20.1492 15.7241 20.0886 15.7661 20.022 15.7948C19.9553 15.8234 19.8839 15.8381 19.8117 15.838H13.5156V9.43164H17.8201V9.46053L18.3978 12.2269L20.004 13.0826C20.1114 13.1399 20.2016 13.2269 20.2647 13.334C20.3277 13.4411 20.3611 13.5643 20.3612 13.6899V13.6916Z"
+                                fill="#D32027" />
+                            <path d="M17.8332 12.132L17.4315 9.83594H15.9609V12.132H17.8332Z" fill="#D32027" />
+                            <path
+                                d="M11.8613 10.8553L9.62739 9.51367V10.2625H5.66406V11.4481H9.62739V12.1969L11.8613 10.8553Z"
+                                fill="#D32027" />
+                            <path d="M15.3834 9.83594H13.8906V12.132H15.3834V9.83594Z" fill="#D32027" />
+                            <path
+                                d="M9.36615 15.8388H5.50781C5.52256 15.3169 5.73228 14.8216 6.09246 14.4578C6.45264 14.0941 6.93493 13.8906 7.43698 13.8906C7.93903 13.8906 8.42132 14.0941 8.7815 14.4578C9.14168 14.8216 9.3514 15.3169 9.36615 15.8388Z"
+                                fill="white" />
+                            <path
+                                d="M18.4833 15.8388H14.625C14.6398 15.3169 14.8495 14.8216 15.2097 14.4578C15.5698 14.0941 16.0521 13.8906 16.5542 13.8906C17.0562 13.8906 17.5385 14.0941 17.8987 14.4578C18.2589 14.8216 18.4686 15.3169 18.4833 15.8388Z"
+                                fill="white" />
+                            <path
+                                d="M7.69146 17.4915C8.53674 17.3488 9.11075 16.5205 8.97354 15.6414C8.83633 14.7623 8.03987 14.1653 7.19458 14.308C6.3493 14.4507 5.77529 15.2791 5.9125 16.1582C6.04971 17.0373 6.84618 17.6342 7.69146 17.4915Z"
+                                fill="#D32027" />
+                            <path
+                                d="M7.591 16.8541C8.09799 16.7685 8.44227 16.2716 8.35998 15.7444C8.27768 15.2171 7.79997 14.8591 7.29298 14.9446C6.786 15.0302 6.44171 15.527 6.52401 16.0543C6.60631 16.5816 7.08402 16.9396 7.591 16.8541Z"
+                                fill="#D32027" />
+                            <path
+                                d="M7.53326 16.4966C7.85005 16.4432 8.06517 16.1327 8.01375 15.8033C7.96233 15.4738 7.66383 15.2501 7.34704 15.3036C7.03025 15.357 6.81512 15.6675 6.86655 15.9969C6.91797 16.3264 7.21647 16.5501 7.53326 16.4966Z"
+                                fill="#D32027" />
+                            <path
+                                d="M17.9819 16.5178C18.3096 15.695 17.9339 14.7517 17.1427 14.4109C16.3515 14.0701 15.4445 14.4608 15.1168 15.2836C14.7891 16.1064 15.1648 17.0497 15.956 17.3905C16.7471 17.7314 17.6541 17.3406 17.9819 16.5178Z"
+                                fill="#D32027" />
+                            <path
+                                d="M17.4103 16.2705C17.6068 15.777 17.3815 15.2112 16.9069 15.0068C16.4324 14.8024 15.8884 15.0367 15.6918 15.5302C15.4953 16.0238 15.7206 16.5895 16.1951 16.794C16.6697 16.9984 17.2137 16.764 17.4103 16.2705Z"
+                                fill="#D32027" />
+                            <path
+                                d="M17.0852 16.1327C17.208 15.8244 17.0672 15.4708 16.7707 15.3431C16.4742 15.2154 16.1343 15.3618 16.0114 15.6702C15.8886 15.9785 16.0294 16.3321 16.3259 16.4598C16.6224 16.5875 16.9624 16.4411 17.0852 16.1327Z"
+                                fill="#D32027" />
+                            <path
+                                d="M20.3575 13.691V14.9292H20.3381C19.4264 14.9292 19.5353 14.5358 19.5353 14.0498C19.5322 13.8563 19.5912 13.6673 19.703 13.5125C19.8148 13.3578 19.9729 13.2461 20.1525 13.1953C20.2173 13.2591 20.2689 13.336 20.3041 13.4212C20.3394 13.5064 20.3575 13.5983 20.3575 13.691Z"
+                                fill="#D32027" />
+                            <path d="M17.2329 12.5488H16.2734V12.8793H17.2329V12.5488Z" fill="#D32027" />
+                            <path
+                                d="M3.31896 14.2051H0.0284028C-0.185761 14.2051 -0.359375 14.3856 -0.359375 14.6084V14.669C-0.359375 14.8918 -0.185761 15.0723 0.0284028 15.0723H3.31896C3.53312 15.0723 3.70674 14.8918 3.70674 14.669V14.6084C3.70674 14.3856 3.53312 14.2051 3.31896 14.2051Z"
+                                fill="#D32027" />
+                            <path
+                                d="M5.35021 12.6133H2.05965C1.84549 12.6133 1.67188 12.7938 1.67188 13.0166V13.0772C1.67188 13.3 1.84549 13.4805 2.05965 13.4805H5.35021C5.56437 13.4805 5.73799 13.3 5.73799 13.0772V13.0166C5.73799 12.7938 5.56437 12.6133 5.35021 12.6133Z"
+                                fill="#D32027" />
+                            <path
+                                d="M7.5206 10.2976V10.7067H5.82696V10.2976H7.5206ZM6.33423 13.4395V9.864C6.33423 9.684 6.37651 9.534 6.46105 9.414C6.5456 9.294 6.65537 9.204 6.79037 9.144C6.92537 9.084 7.06787 9.054 7.21787 9.054C7.33651 9.054 7.43332 9.06354 7.50832 9.08263C7.58332 9.10173 7.63923 9.11945 7.67605 9.13582L7.53696 9.55309C7.51241 9.54491 7.47832 9.53468 7.43469 9.52241C7.39241 9.51013 7.33651 9.504 7.26696 9.504C7.10741 9.504 6.99219 9.54423 6.92128 9.62468C6.85173 9.70513 6.81696 9.82309 6.81696 9.97854V13.4395H6.33423ZM8.19713 13.4395V10.2976H8.66349V10.7722H8.69622C8.75349 10.6167 8.85713 10.4906 9.00713 10.3938C9.15713 10.297 9.32622 10.2485 9.5144 10.2485C9.54986 10.2485 9.59418 10.2492 9.64736 10.2506C9.70054 10.252 9.74077 10.254 9.76804 10.2567V10.7476C9.75168 10.7435 9.71418 10.7374 9.65554 10.7292C9.59827 10.7197 9.53759 10.7149 9.47349 10.7149C9.32077 10.7149 9.1844 10.747 9.0644 10.811C8.94577 10.8738 8.85168 10.961 8.78213 11.0729C8.71395 11.1833 8.67986 11.3095 8.67986 11.4513V13.4395H8.19713ZM11.5619 13.5049C11.2592 13.5049 10.998 13.4381 10.7785 13.3045C10.5603 13.1695 10.3919 12.9813 10.2733 12.7399C10.156 12.4972 10.0974 12.2149 10.0974 11.8931C10.0974 11.5713 10.156 11.2876 10.2733 11.0422C10.3919 10.7954 10.5569 10.6031 10.7683 10.4654C10.981 10.3263 11.2292 10.2567 11.5128 10.2567C11.6764 10.2567 11.838 10.284 11.9976 10.3385C12.1571 10.3931 12.3024 10.4817 12.4333 10.6045C12.5642 10.7258 12.6685 10.8867 12.7462 11.0872C12.8239 11.2876 12.8628 11.5345 12.8628 11.8276V12.0322H10.441V11.6149H12.3719C12.3719 11.4376 12.3364 11.2795 12.2655 11.1404C12.196 11.0013 12.0964 10.8915 11.9669 10.811C11.8387 10.7306 11.6874 10.6904 11.5128 10.6904C11.3205 10.6904 11.1542 10.7381 11.0137 10.8335C10.8746 10.9276 10.7676 11.0504 10.6926 11.2017C10.6176 11.3531 10.5801 11.5154 10.5801 11.6885V11.9667C10.5801 12.204 10.621 12.4051 10.7028 12.5701C10.786 12.7338 10.9012 12.8585 11.0485 12.9445C11.1958 13.029 11.3669 13.0713 11.5619 13.0713C11.6887 13.0713 11.8033 13.0535 11.9055 13.0181C12.0092 12.9813 12.0985 12.9267 12.1735 12.8545C12.2485 12.7808 12.3064 12.6895 12.3474 12.5804L12.8137 12.7113C12.7646 12.8695 12.6821 13.0085 12.5662 13.1285C12.4503 13.2472 12.3071 13.3399 12.1367 13.4067C11.9662 13.4722 11.7746 13.5049 11.5619 13.5049ZM14.9144 13.5049C14.6117 13.5049 14.3505 13.4381 14.131 13.3045C13.9128 13.1695 13.7444 12.9813 13.6258 12.7399C13.5085 12.4972 13.4499 12.2149 13.4499 11.8931C13.4499 11.5713 13.5085 11.2876 13.6258 11.0422C13.7444 10.7954 13.9094 10.6031 14.1208 10.4654C14.3335 10.3263 14.5817 10.2567 14.8653 10.2567C15.0289 10.2567 15.1905 10.284 15.3501 10.3385C15.5096 10.3931 15.6549 10.4817 15.7858 10.6045C15.9167 10.7258 16.021 10.8867 16.0987 11.0872C16.1764 11.2876 16.2153 11.5345 16.2153 11.8276V12.0322H13.7935V11.6149H15.7244C15.7244 11.4376 15.6889 11.2795 15.618 11.1404C15.5485 11.0013 15.4489 10.8915 15.3194 10.811C15.1912 10.7306 15.0399 10.6904 14.8653 10.6904C14.673 10.6904 14.5067 10.7381 14.3662 10.8335C14.2271 10.9276 14.1201 11.0504 14.0451 11.2017C13.9701 11.3531 13.9326 11.5154 13.9326 11.6885V11.9667C13.9326 12.204 13.9735 12.4051 14.0553 12.5701C14.1385 12.7338 14.2537 12.8585 14.401 12.9445C14.5483 13.029 14.7194 13.0713 14.9144 13.0713C15.0412 13.0713 15.1558 13.0535 15.258 13.0181C15.3617 12.9813 15.451 12.9267 15.526 12.8545C15.601 12.7808 15.6589 12.6895 15.6999 12.5804L16.1662 12.7113C16.1171 12.8695 16.0346 13.0085 15.9187 13.1285C15.8028 13.2472 15.6596 13.3399 15.4892 13.4067C15.3187 13.4722 15.1271 13.5049 14.9144 13.5049Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1762_7152">
+                                <rect width="21" height="21" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <p>Free Delivery</p>
+                </div> -->
+
+                <!-- <div class="vertical-line"></div> -->
+                <div>
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_1762_7175)">
                             <rect width="21" height="21" fill="#FFF5F6" />
@@ -214,15 +344,23 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <span style="padding-top: 2px !important;">Easy Return</span>
+
+                    <span>Easy Return</span>
                 </div>
+
+
             </div>
         </div>
+
         <!-- <div class=" col-100">
             <div class="lines"></div>
         </div> -->
+
         <div class="col col-100">
+
             <div class="store-product">
+
+
                 <div class="list">
                     <img width="61" [src]="product.storeINFO.logo" alt="">
                 </div>
@@ -230,44 +368,106 @@
                     <p class="store-name">{{product.storeINFO.name}}</p>
                     <p class="store-desc">{{product.storeINFO.about || "Nothing to Show"}}</p>
                 </div>
+
             </div>
         </div>
+
         <!-- <div class="col col-100">
             <div class="line"></div>
         </div> -->
+
         <div class="col col-100" *ngIf="product.burnHigh && product.burnHigh !== 'Σ' ">
             <!-- <div class="line"></div> -->
             <div class="topmar">
                 <p class="specifications">Highlights</p>
                 <p class="benefits">{{product.burnHigh}}</p>
             </div>
+
+            <!-- <ul>
+                <li>Brand: <span>{{ product.burnBrand }}</span></li>
+                <li *ngIf="product.burnHigh && product.burnHigh !== 'Σ' ">{{product.burnHigh}}</li>
+            </ul> -->
+
+            <!--div class="topics">
+                <div class="topbrand"><svg width="6" height="7" viewBox="0 0 6 7" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="3" cy="3.5" r="3" fill="black" />
+                    </svg>
+                    <p>Brand:</p> <span>Shu Uemura</span>
+                </div>
+                <div class="topic-desc">
+                    <div>
+                        <svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="3" cy="3.5" r="3" fill="black" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="xyz">Silky, Weightless,Gliding texture infused with Japnese tsubaki oil.</p>
+                    </div>
+                </div>
+                <div class="topic-desc">
+                    <div>
+                        <svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="3" cy="3.5" r="3" fill="black" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="xyz">Provides lasting and boldly living colors beyond expectations with the unique and
+                            captivative
+                            aroma
+                            of the Japnese
+                            hinkoi.</p>
+                    </div>
+                </div>
+            </div-->
         </div>
+
         <!-- <div class="col col-100">
             <div class="line"></div>
         </div> -->
+
         <div class="col col-100" *ngIf="product.burnSpec && product.burnSpec !== 'Σ' ">
+
             <div class="topmar">
                 <p class="specifications">Specifications</p>
                 <p class="benefits">{{product.burnSpec || 'No Specifications'}}</p>
             </div>
         </div>
+
         <!-- <div class="col col-100">
             <div class="line"></div>
         </div> -->
+
         <div class="col col-100" *ngIf="product.burnDec && product.burnDec !== 'Σ' ">
+
             <div class="topmar">
                 <p class="specifications">Description</p>
                 <p class="benefits">{{product.burnDec || 'No Description'}}</p>
             </div>
         </div>
+        
         <div class="col col-100" style="margin-bottom: 100px;">
             <div class="amount_buy">
                 <div>
                     <div class="amount">Amount</div>
                     <div class="amount_price">₹{{product.cost}}</div>
                 </div>
+
                 <div class="buy_now">
-                    <button mat-button>buy now</button>
+                    <div class="plusminuscont">
+                        <div>
+                            <button mat-button (click)="Addminus(0)">
+                                -
+                            </button>
+                        </div>
+                        <div class="qtycont">{{prodQty}}</div>
+                        <div>
+                            <button mat-button (click)="Addminus(1)">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <button mat-button class="buybtn">buy now</button>
                 </div>
             </div>
         </div>
