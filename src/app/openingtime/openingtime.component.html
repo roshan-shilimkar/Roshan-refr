@@ -1,0 +1,198 @@
+<div>
+    <div class="timeheading">
+        Opening hours
+    </div>
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Sunday
+        </div>
+        <span class="divide"></span>
+        <div *ngIf="storeLoc.openSun == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openSun == true">
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openSunS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openSunE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openSunS) }} - {{ tConvert(storeLoc.openSunE) }}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Monday
+        </div>
+        <span class="divide"></span>
+        <div *ngIf="storeLoc.openMon == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openMon == true">
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openMonS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openMonE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openMonS) }} - {{ tConvert(storeLoc.openMonE) }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Tuesday
+        </div>
+        <span class="divide"></span>
+
+        <div *ngIf="storeLoc.openTue == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openTue == true">
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openTueS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openTueE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openTueS) }} - {{ tConvert(storeLoc.openTueE) }}
+            </div>
+            <!-- {{ tConvert(storeLoc.openTueS) }} <span *ngIf="storeLoc.BreakDaily == true">- {{
+                tConvert(storeLoc.BreakStart) }} & {{ tConvert(storeLoc.BreakEnd) }}</span> - {{
+            tConvert(storeLoc.openTueE) }} -->
+        </div>
+    </div>
+
+
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Wednesday
+        </div>
+        <span class="divide"></span>
+
+        <div *ngIf="storeLoc.openWed == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openWed == true">
+            <!-- {{ tConvert(storeLoc.openWedS) }} <span *ngIf="storeLoc.BreakDaily == true">- {{
+                tConvert(storeLoc.BreakStart) }} & {{ tConvert(storeLoc.BreakEnd) }}</span> - {{
+            tConvert(storeLoc.openWedE) }} -->
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openWedS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openWedE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openWedS) }} - {{ tConvert(storeLoc.openWedE) }}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Thursday
+        </div>
+        <span class="divide"></span>
+
+        <div *ngIf="storeLoc.openThu == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openThu == true">
+            <!-- {{ tConvert(storeLoc.openThuS) }} <span *ngIf="storeLoc.BreakDaily == true">- {{
+                tConvert(storeLoc.BreakStart) }} & {{ tConvert(storeLoc.BreakEnd) }}</span> - {{
+            tConvert(storeLoc.openThuE) }} -->
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openThuS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openThuE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openThuS) }} - {{ tConvert(storeLoc.openThuE) }}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Friday
+        </div>
+        <span class="divide"></span>
+
+        <div *ngIf="storeLoc.openFri == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openFri == true">
+            <!-- {{ tConvert(storeLoc.openFriS) }} <span *ngIf="storeLoc.BreakDaily == true">- {{
+                tConvert(storeLoc.BreakStart) }} & {{ tConvert(storeLoc.BreakEnd) }}</span> - {{
+            tConvert(storeLoc.openFriE) }} -->
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openFriS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openFriE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openFriS) }} - {{ tConvert(storeLoc.openFriE) }}
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="daytimecont">
+        <div class="daycont">
+            Saturday
+        </div>
+        <span class="divide"></span>
+
+        <div *ngIf="storeLoc.openSat == false">
+            Closed
+        </div>
+        <div *ngIf="storeLoc.openSat == true">
+            <!-- {{ tConvert(storeLoc.openSatS) }} <span *ngIf="storeLoc.BreakDaily == true">- {{
+                tConvert(storeLoc.BreakStart) }} & {{ tConvert(storeLoc.BreakEnd) }}</span> - {{
+            tConvert(storeLoc.openSatE) }} -->
+            <div *ngIf="storeLoc.BreakDaily == true">
+                <div>
+                    {{ tConvert(storeLoc.openSatS) }} - {{ tConvert(storeLoc.BreakStart) }}
+                </div>
+                <div>
+                    {{ tConvert(storeLoc.BreakEnd) }} - {{ tConvert(storeLoc.openSatE) }}
+                </div>
+            </div>
+            <div *ngIf="storeLoc.BreakDaily == false">
+                {{ tConvert(storeLoc.openSatS) }} - {{ tConvert(storeLoc.openSatE) }}
+            </div>
+        </div>
+    </div>
+
+</div>

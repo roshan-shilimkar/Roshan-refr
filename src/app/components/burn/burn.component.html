@@ -35,7 +35,7 @@
         </button>
     </div>
 
-    <button mat-icon-button [routerLink]=" '/burn-bucket' " routerLinkActive="router-link-active">
+    <button mat-icon-button matBadge="15" matBadgeColor="warn" [routerLink]=" '/burn-bucket' " routerLinkActive="router-link-active" class="burnbag">
         <!--roshan Code Start From here @26 July 2022 08:30P-->
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="28" height="28" rx="14" fill="url(#paint0_linear_2172_13995)" />
@@ -125,17 +125,13 @@
 
         <ng-container>
             <div class="col col-100" *ngIf="noCost.length > 0">
-
-
-
                 <div class="card-size col col-50 col-sm-100 col-card">
-
                     <div class="card-box">
                         <div class="card-main">
                             <div class="cost-deals">
                                 <div class="deals">
                                     <p>no cost deals</p>
-                                    <button mat-button><span>Shop more</span>
+                                    <button mat-button routerLink="/Burnproduct/noCost"><span>Shop more</span>
                                         <mat-icon>chevron_right
                                         </mat-icon>
                                     </button>
@@ -211,7 +207,7 @@
                                         H SALE
                                     </i>
                                 </p>
-                                <button mat-button routerLink="/burn-list/flashSale">
+                                <button mat-button routerLink="/Burnproduct/flashSale">
                                     <span>Shop more</span>
                                     <mat-icon>chevron_right
                                     </mat-icon>
@@ -273,7 +269,7 @@
                                     <span>CKET LIST</span>
                                     <!-- </i> -->
                                 </p>
-                                <button mat-button routerLink="/burn-list/flashSale">
+                                <button mat-button routerLink="'/burn-bucket'">
                                     <span>Shop more</span>
                                     <mat-icon>chevron_right
                                     </mat-icon>
@@ -409,7 +405,7 @@
                                                     </linearGradient>
                                                 </defs>
                                             </svg>
-            
+        
                                         </div>
                                     </div>
                                 </a>

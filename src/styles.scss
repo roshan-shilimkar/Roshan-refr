@@ -801,3 +801,10 @@ mat-bottom-sheet-container.newcontact {
     background: #2267b1;
     border: 1px solid #FFF;
 }
+
+.mat-badge-warn .mat-badge-content {
+    color: rgba(0, 0, 0, 0.87);
+    background: #FFF;
+    font-size: 10px;
+    border: 1px solid #F55A65;
+}

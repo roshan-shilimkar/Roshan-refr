@@ -1,0 +1,21 @@
+.daytimecont{
+    display: flex;
+    padding: 10px 0px;
+    
+    .daycont{
+        display: flex;
+        align-items: center;
+    }
+    :nth-child(3){
+        color: gray;
+        text-align: right;
+
+    }
+}
+
+.timeheading{
+    font-size: 16px;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    // justify-content: space-between;
+}

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { OpeningtimeComponent } from 'src/app/openingtime/openingtime.component';
 
 @Component({
   selector: 'app-timestampcompare',
@@ -16,34 +18,42 @@ export class TimestampcompareComponent implements OnInit {
   isbreak: boolean = false;
   weekstartday: string = "";
   weekendday: string = "";
+  showmssg: boolean = false;
   storeLoc: any = {
-    opensDaily: false, opensDailyS: "07:00", opensDailyE: "23:00",
+    opensDaily: true, opensDailyS: "07:00", opensDailyE: "23:00",
+    BreakDaily: false, BreakStart: "", BreakEnd: "",
     openMon: true, openMonS: "07:00", openMonE: "23:00",
     openTue: true, openTueS: "07:00", openTueE: "23:00",
     openWed: true, openWedS: "07:00", openWedE: "23:00",
     openThu: true, openThuS: "07:00", openThuE: "23:00",
     openFri: true, openFriS: "07:00", openFriE: "23:00",
-    openSat: false, openSatS: "07:00", openSatE: "23:00",
+    openSat: true, openSatS: "07:00", openSatE: "23:00",
     openSun: true, openSunS: "07:00", openSunE: "23:00",
-    BreakDaily: true, BreakStart: "13:30", BreakEnd: "16:00",
   }
   // take Current time from firebse in miliseconds and campare it with store time and show 
   timestamp: any = {
     nanoseconds: 0,
     seconds: 1562524200
   }
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.storeLoc.BreakStart = this.tConvert(this.storeLoc.BreakStart.toString());
-    this.storeLoc.BreakEnd = this.tConvert(this.storeLoc.BreakEnd.toString());
-    this.storeLoc.opensDailyS = this.tConvert(this.storeLoc.opensDailyS.toString());
-    this.storeLoc.opensDailyE = this.tConvert(this.storeLoc.opensDailyE.toString());
+    // console.log("1"+this.storeLoc.BreakStart);
+    // this.storeLoc.BreakStart = this.storeLoc.BreakStart != "" ? this.tConvert(this.storeLoc.BreakStart.toString()) : "";
+    // console.log("2"+this.storeLoc.BreakStart);
+
+    // this.storeLoc.BreakEnd = this.storeLoc.BreakEnd != "" ? this.tConvert(this.storeLoc.BreakEnd.toString()): "";
+    // console.log("1"+this.storeLoc.opensDailyE);
+    // // this.storeLoc.opensDailyS = this.storeLoc.opensDailyS != "" ? this.tConvert(this.storeLoc.opensDailyS.toString()):"";
+
+    // this.storeLoc.opensDailyE = this.storeLoc.opensDailyE != "" ? this.tConvert(this.storeLoc.opensDailyE.toString()):"";
+    // console.log("1"+this.storeLoc.opensDailyE);
+
   }
 
   tConvert(time: any) {
     time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)?$/) || [time];
-    console.log("Time = " + time);
+    // console.log("Time = " + time);
     if (time.length > 1) {
       time = time.slice(1);
       time[5] = +time[0] < 12 ? 'AM' : 'PM';
@@ -53,21 +63,46 @@ export class TimestampcompareComponent implements OnInit {
   }
 
 
-  comparetimestamp() {
-    this.timestampdate = new Date(this.timestamp.seconds * 1000).toDateString();
+  // comparetimestamp() {
+  //   this.timestampdate = new Date(this.timestamp.seconds * 1000).toDateString();
+  // }
+
+  showmsg() {
+    console.log(this.storeLoc);
+    if (this.storeLoc.BreakDaily == true && (this.storeLoc.BreakStart < this.storeLoc.opensDailyS) && (this.storeLoc.BreakEnd > this.storeLoc.opensDailyE)) {
+      this.storeLoc.BreakStart = "";
+      this.storeLoc.BreakEnd = "";
+      this.showmssg=false;
+      alert("Please Select the correct break's Start and End Time.");
+    }
+    else {
+      this.showmssg = true;
+    }
+
+
+    // console.log("1"+this.storeLoc.BreakStart);
+    // this.storeLoc.BreakStart = this.storeLoc.BreakStart != "" ? this.tConvert(this.storeLoc.BreakStart.toString()) : "";
+    // // console.log("2"+this.storeLoc.BreakStart);
+
+    // this.storeLoc.BreakEnd = this.storeLoc.BreakEnd != "" ? this.tConvert(this.storeLoc.BreakEnd.toString()) : "";
+    // console.log("1"+this.storeLoc.opensDailyS);
+    // this.storeLoc.opensDailyS = this.storeLoc.opensDailyS != "" ? this.tConvert(this.storeLoc.opensDailyS.toString()) : "";
+    // console.log(this.storeLoc.opensDailyS);
+    // this.storeLoc.opensDailyE = this.storeLoc.opensDailyE != "" ? this.tConvert(this.storeLoc.opensDailyE.toString()) : "";
+    // console.log("1"+this.storeLoc.opensDailyE);
   }
 
-  getTOdaysDate() {
-    this.todaysdate = new Date().toDateString();
-  }
+  // getTOdaysDate() {
+  //   this.todaysdate = new Date().toDateString();
+  // }
 
-  getdiff() {
-    var startDate = new Date(this.timestamp.seconds * 1000);
-    var endDate = new Date();
-    var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
-  }
+  // getdiff() {
+  //   var startDate = new Date(this.timestamp.seconds * 1000);
+  //   var endDate = new Date();
+  //   var seconds = (endDate.getTime() - startDate.getTime()) / 1000;
+  // }
 
-  printvalue() {
+  // printvalue() {
     // if (this.ShopS == "") {
     //   alert("Please Enter the shop opening time.");
     // }
@@ -115,5 +150,13 @@ export class TimestampcompareComponent implements OnInit {
     //   this.ShopE = (parseFloat(this.ShopE.substring(0, 2)) < 12) ? this.ShopE + " AM" : this.ShopE.replace(this.ShopE.substring(0, 2), (parseFloat(this.ShopE.substring(0, 2)) - 12).toString()) + " PM";
     // }
     // }
+  // }
+
+  opendailog(){
+    console.log(this.storeLoc);
+    const dialogRef = this.dialog.open(OpeningtimeComponent, {
+      width: '80%',
+      data: {timedata: this.storeLoc},
+    });
   }
 }

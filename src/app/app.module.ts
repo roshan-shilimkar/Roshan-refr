@@ -47,6 +47,9 @@ import { BurnComponent } from './components/burn/burn.component';
 import { FashionComponent } from './components/fashion/fashion.component';
 import { BurnCatComponent } from './components/burn/burn-cat/burn-cat.component';
 import { BurnProductComponent } from './components/burn/burn-product/burn-product.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { OpeningtimeComponent } from './openingtime/openingtime.component';
+
 
 @NgModule({
   declarations: [
@@ -71,8 +74,10 @@ import { BurnProductComponent } from './components/burn/burn-product/burn-produc
     FashionComponent,
     BurnCatComponent,
     BurnProductComponent,
+    OpeningtimeComponent,
   ],
   imports: [
+    MatBadgeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

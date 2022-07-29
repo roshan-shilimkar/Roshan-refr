@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: "", component: TabsComponent,
     children: [
-      { path: "", redirectTo: "/Burnproduct", pathMatch: "full" },
+      { path: "", redirectTo: "/timestamp", pathMatch: "full" },
       { path: "blogs", component: BlogsComponent },
       { path: "blogs/:id", component: BlogComponent },
       { path: "blogs/business", component: BlogsComponent },
@@ -42,7 +42,7 @@ const routes: Routes = [
       { path: "DistanceCalc", component: DistancecalculatorComponent },
       { path: "Burn", component: BurnComponent },
       { path: "Burncat", component: BurnCatComponent },
-      { path: "Burnproduct", component: BurnProductComponent }
+      { path: "Burnproduct/:type", component: BurnProductComponent }
 
     ]
   }

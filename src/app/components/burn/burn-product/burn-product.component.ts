@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-burn-product',
@@ -26,7 +27,11 @@ export class BurnProductComponent implements OnInit {
   mine: any = {
     acBalC: 0,
   }
-  constructor() { }
+  constructor(private actRoute: ActivatedRoute) { 
+    const r = this.actRoute.snapshot.params;
+    const what = r["noCost"] ? "noCost" : "" + r["flashSale"] ? "flashSale": "";
+    console.log("title"+what)
+  }
 
   ngOnInit(): void {
   }
